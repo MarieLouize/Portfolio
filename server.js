@@ -327,17 +327,26 @@ const server = http.createServer((req, res) => {
 
   // Serve Single-Page Auditing UI
   if (pathname === '/' || pathname === '/index.html') {
+    const distHtmlPath = path.join(REPO_ROOT, 'dist', 'index.html');
     const viewerHtmlPath = path.join(REPO_ROOT, 'viewer', 'index.html');
-    if (fs.existsSync(viewerHtmlPath)) {
+    const targetHtml = fs.existsSync(distHtmlPath) ? distHtmlPath : viewerHtmlPath;
+    if (fs.existsSync(targetHtml)) {
       res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-      fs.createReadStream(viewerHtmlPath).pipe(res);
+      fs.createReadStream(targetHtml).pipe(res);
       return;
     }
   }
 
-  // Serve static assets from viewer/ or assets/
-  if (pathname.startsWith('/viewer/') || pathname.startsWith('/assets/')) {
-    const filePath = path.join(REPO_ROOT, pathname);
+  // Serve static assets from dist/ or viewer/ or assets/
+  if (pathname.startsWith('/assets/') || pathname.startsWith('/viewer/') || pathname.includes('.')) {
+    let filePath = path.join(REPO_ROOT, 'dist', pathname);
+    if (!fs.existsSync(filePath)) {
+      filePath = path.join(REPO_ROOT, pathname);
+    }
+    if (!fs.existsSync(filePath)) {
+      filePath = path.join(REPO_ROOT, 'viewer', pathname);
+    }
+
     if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
       const ext = path.extname(filePath);
       const mimeMap = {
@@ -347,7 +356,8 @@ const server = http.createServer((req, res) => {
         '.json': 'application/json',
         '.png': 'image/png',
         '.jpg': 'image/jpeg',
-        '.svg': 'image/svg+xml'
+        '.svg': 'image/svg+xml',
+        '.ico': 'image/x-icon'
       };
       res.writeHead(200, { 'Content-Type': mimeMap[ext] || 'application/octet-stream' });
       fs.createReadStream(filePath).pipe(res);

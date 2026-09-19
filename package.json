@@ -4,6 +4,8 @@
   "description": "Technical Operations & Systems Evidence Vault - Portfolio V1",
   "main": "server.js",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
     "start": "node server.js",
     "serve": "node server.js",
     "audit": "node -e \"const http = require('http'); const fs = require('fs'); const { spawn } = require('child_process'); const server = spawn('node', ['server.js']); setTimeout(() => { http.get('http://localhost:3333/api/audit', res => { let data = ''; res.on('data', c => data += c); res.on('end', () => { console.log(data); server.kill(); process.exit(0); }); }); }, 800);\""
