@@ -45,29 +45,67 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
         </div>
       </section>
 
-      {/* STATUS CARD */}
+      {/* SKILLS & TOOLS */}
       <section>
-        <div className="status-card">
-          <div className="status-figure">
-            <span className="big">9 / 9</span>
-            <span className="sub">Proofs verified &amp; operational</span>
+        <div className="section-label">Skills &amp; Tools</div>
+        <div className="skills-card">
+          <div className="skills-tools-strip">
+            <div className="skills-subhead">Core Tooling &amp; Stack</div>
+            <div className="skills-chip-row">
+              <span className="skill-chip highlight">SQL (Postgres &middot; SQLite)</span>
+              <span className="skill-chip highlight">Linux CLI &amp; Bash</span>
+              <span className="skill-chip highlight">REST APIs &amp; cURL</span>
+              <span className="skill-chip">Python</span>
+              <span className="skill-chip">Node.js &amp; TypeScript</span>
+              <span className="skill-chip">Git &amp; GitHub</span>
+              <span className="skill-chip">JSON Schema &amp; Webhooks</span>
+              <span className="skill-chip">Markdown &amp; Mermaid.js</span>
+            </div>
           </div>
-          <div className="status-caption">
-            100% automated test coverage across all five operational modules.
-          </div>
-          <div className="ring">
-            <svg viewBox="0 0 80 80">
-              <circle className="track" cx="40" cy="40" r="34"></circle>
-              <circle 
-                className="fill" 
-                cx="40" 
-                cy="40" 
-                r="34" 
-                strokeDasharray="213.6" 
-                strokeDashoffset="0"
-              ></circle>
-            </svg>
-            <span>100%</span>
+
+          <div className="skills-tools-strip" style={{ borderBottom: 'none', paddingBottom: 0 }}>
+            <div className="skills-subhead">Operational Disciplines</div>
+            <div className="skills-modules-grid">
+              <div className="skill-module-box door-support">
+                <div className="skill-module-title">
+                  <TerminalIcon size={16} color="var(--door-support)" />
+                  <span>Troubleshooting &amp; Fixes</span>
+                </div>
+                <p className="skill-module-desc">
+                  Reproducible cURL triage, log investigation, edge-cache root-cause diagnosis, and blameless postmortems.
+                </p>
+              </div>
+
+              <div className="skill-module-box door-cs">
+                <div className="skill-module-title">
+                  <ChatIcon size={16} color="var(--door-cs)" />
+                  <span>User Onboarding &amp; Support</span>
+                </div>
+                <p className="skill-module-desc">
+                  Time-to-value milestone checklists, cohort health scorecards (QBR), at-risk churn intervention, and SLA matrices.
+                </p>
+              </div>
+
+              <div className="skill-module-box door-docs">
+                <div className="skill-module-title">
+                  <ManualIcon size={16} color="var(--door-docs)" />
+                  <span>Clear Guides &amp; Runbooks</span>
+                </div>
+                <p className="skill-module-desc">
+                  5-layer customer deflection architecture, step-by-step living runbooks, and operator onboarding documentation.
+                </p>
+              </div>
+
+              <div className="skill-module-box door-aiqa">
+                <div className="skill-module-title">
+                  <GaugeIcon size={16} color="var(--door-aiqa)" />
+                  <span>Automated Quality Checks</span>
+                </div>
+                <p className="skill-module-desc">
+                  Multi-dimensional eval rubrics, deterministic quality gates, entropy thresholds, and multi-provider model benchmarking.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
