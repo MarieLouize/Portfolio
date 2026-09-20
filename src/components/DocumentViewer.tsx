@@ -266,7 +266,7 @@ export const DocumentViewer: React.FC<DocumentViewerProps> = ({
 
           <div className="doc-meta-grid">
             <div className="doc-meta-item">
-              <div className="k">Target Door</div>
+              <div className="k">Operational Stage</div>
               <div className="v">{doc.door}</div>
             </div>
             <div className="doc-meta-item">

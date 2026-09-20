@@ -22,7 +22,7 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
               <div>
                 <p className="hi">operator identifier:</p>
                 <h2>Marie-Louize <span className="name-accent">— Technical Operator</span></h2>
-                <p className="role">Support Engineering &middot; Customer Success &middot; Living Documentation &middot; AI Ops/QA</p>
+                <p className="role">Troubleshooting &middot; User Support &middot; Clear Runbooks &middot; Quality Checks</p>
                 <p className="quote">&ldquo;I make messy digital operations clearer and more repeatable.&rdquo;</p>
               </div>
             </div>
@@ -32,8 +32,8 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
                 <span>B.Sc. in Computer Science &middot; Systems, SQL, and telemetry infrastructure</span>
               </div>
               <div className="field">
-                <span className="k">Looking for</span>
-                <span>Technical Operations, Support Engineering, Customer Success, or AI Output QA</span>
+                <span className="k">Focus</span>
+                <span>Troubleshooting, User Support, Living Runbooks, and Automated Quality Checks</span>
               </div>
               <div className="field">
                 <span className="k">Architecture</span>
@@ -52,7 +52,7 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
             <span className="sub">Proofs verified &amp; operational</span>
           </div>
           <div className="status-caption">
-            100% automated test coverage across all four operational doors and external placement.
+            100% automated test coverage across all five operational modules.
           </div>
           <div className="ring">
             <svg viewBox="0 0 80 80">
@@ -76,19 +76,19 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
         <div className="section-label">About</div>
         <div className="about-body">
           <p>
-            I treat software operations like physical machinery under load. When a customer is panicked and an integration breaks, I do not guess, apologize, or hide behind corporate boilerplate. I separate human friction from technical state, isolate where the system diverged, and guide everyone toward deterministic alignment.
+            I look at software systems the way an engineer looks at physical machinery under load. When a customer is stuck and an integration breaks, I do not guess, apologize, or hide behind corporate boilerplate. I separate human friction from technical state, find where the machine failed, and walk everyone through to a clean resolution.
           </p>
           <p>
-            My work bridges four technical failure planes, organized directly by folder in the repository tree:
+            My work follows four practical steps across the lifecycle of a problem:
           </p>
           <div className="failure-planes-list">
-            <div><strong>01. Support &amp; Technical Operations:</strong> Reproducible triage, edge-cache invalidation, and incident command.</div>
-            <div><strong>02. Customer Success:</strong> Behavioral choice architecture, micro-commitment ladders, and churn defense.</div>
-            <div><strong>03. Documentation &amp; Knowledge Operations:</strong> Converting tribal panic into living evacuation-map runbooks.</div>
-            <div><strong>04. AI Operations / Output QA:</strong> Heuristic quality gates, entropy thresholds, and multi-provider benchmarks.</div>
+            <div><strong>01. Troubleshooting &amp; Fixes:</strong> Catching live errors, tracing logs, and fixing the root cause.</div>
+            <div><strong>02. User Onboarding &amp; Support:</strong> Guiding users through confusing breaks and keeping them steady.</div>
+            <div><strong>03. Clear Guides &amp; Runbooks:</strong> Turning tribal knowledge into living, step-by-step instructions.</div>
+            <div><strong>04. Automated Quality Checks:</strong> Writing automated tests and benchmarks so problems never recur.</div>
           </div>
           <p>
-            A support ticket solved five times without an SOP is not support; it is an unlogged system outage. Every proof in this vault resolves through a 5-step operational loop:
+            A support ticket solved five times without an SOP is not support; it is an unlogged outage. Every proof in this vault resolves through a simple operational cycle:
           </p>
           <div className="cycle-strip">
             <span className="step">DIAGNOSE</span><span className="arrow">&rarr;</span>
@@ -102,24 +102,24 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
 
       {/* NAV GUIDE */}
       <section>
-        <div className="section-label">How this site is organized</div>
+        <div className="section-label">How this work connects</div>
         <div className="guide-card">
           <p>
-            This site is an unvarnished projection of the underlying Git repository &mdash; identical folder boundaries, Markdown schemas, and test assertions. Every operational door carries a persistent telemetry color and icon across the explorer, the proof roster, and individual runbooks.
+            Every proof here is a verified artifact from a single operational habit: find what broke, help the people affected, write down how it works, and build automated checks so it stays fixed. Each stage carries a consistent color tag across the explorer and the individual runbooks.
           </p>
           <div className="key-row">
             <div className="key-item door-support">
               <svg className="key-icon" viewBox="0 0 20 20" fill="none" stroke="var(--door-support)" strokeWidth="2">
                 <path d="M4 12l4-8 4 8M6.5 10h3M12 15l2.5-6 2.5 6M13.2 12.5h2.6"/>
               </svg>
-              Support &amp; Tech Ops
+              Troubleshooting &amp; Fixes
             </div>
             <div className="key-item door-cs">
               <svg className="key-icon" viewBox="0 0 20 20" fill="none" stroke="var(--door-cs)" strokeWidth="2">
                 <path d="M3 5h14v8H8l-3 3v-3H3z"/>
                 <path d="M6.5 8.5h7M6.5 10.8h4.5"/>
               </svg>
-              Customer Success
+              User Onboarding &amp; Support
             </div>
             <div className="key-item door-docs">
               <svg className="key-icon" viewBox="0 0 20 20" fill="none" stroke="var(--door-docs)" strokeWidth="2">
@@ -127,13 +127,13 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
                 <path d="M10.5 4.5H16v11h-5.5"/>
                 <path d="M6 7h3M6 9.3h3M11.5 7h3M11.5 9.3h3"/>
               </svg>
-              Documentation
+              Clear Guides &amp; Runbooks
             </div>
             <div className="key-item door-aiqa">
               <svg className="key-icon" viewBox="0 0 20 20" fill="none" stroke="var(--door-aiqa)" strokeWidth="2">
                 <path d="M10 2.5l1.8 4.8 4.8 1.8-4.8 1.8L10 15.7l-1.8-4.8-4.8-1.8 4.8-1.8z"/>
               </svg>
-              AI Ops / QA
+              Automated Quality Checks
             </div>
           </div>
         </div>
@@ -141,7 +141,7 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
 
       {/* PROOF ROSTER */}
       <section>
-        <div className="section-label">All nine proofs</div>
+        <div className="section-label">All nine proofs in sequence</div>
         <div className="data-list">
           <div 
             className="data-row door-support"
@@ -150,9 +150,9 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
             <svg className="door-icon" viewBox="0 0 20 20" fill="none" stroke="var(--door-support)" strokeWidth="2">
               <path d="M4 12l4-8 4 8M6.5 10h3M12 15l2.5-6 2.5 6M13.2 12.5h2.6"/>
             </svg>
-            <span className="name">Support &amp; Tech Ops Queue (AP-019 to TR-S02)</span>
+            <span className="name">Support Queue Triage &amp; Macros (AP-019 to TR-S02)</span>
             <div className="data-row-tags">
-              <span className="door">SUPPORT</span>
+              <span className="door">FIXES</span>
               <span className="class-tag real">Real</span>
               <span className="class-tag sim">Sim</span>
             </div>
@@ -167,7 +167,7 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
             </svg>
             <span className="name">Edge-Cache Pipeline Diagnosis (3-Min Fast Track)</span>
             <div className="data-row-tags">
-              <span className="door">SUPPORT</span>
+              <span className="door">FIXES</span>
               <span className="class-tag real">Real</span>
             </div>
           </div>
@@ -181,7 +181,7 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
             </svg>
             <span className="name">Broken Webhook Incident Postmortem</span>
             <div className="data-row-tags">
-              <span className="door">SUPPORT</span>
+              <span className="door">FIXES</span>
               <span className="class-tag sim">Simulation</span>
             </div>
           </div>
@@ -194,9 +194,9 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
               <path d="M3 5h14v8H8l-3 3v-3H3z"/>
               <path d="M6.5 8.5h7M6.5 10.8h4.5"/>
             </svg>
-            <span className="name">AcePadi Beta CS Onboarding Program</span>
+            <span className="name">AcePadi Beta User Onboarding &amp; Retention Program</span>
             <div className="data-row-tags">
-              <span className="door">CS</span>
+              <span className="door">USER OPS</span>
               <span className="class-tag real">Real</span>
             </div>
           </div>
@@ -210,9 +210,9 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
               <path d="M10.5 4.5H16v11h-5.5"/>
               <path d="M6 7h3M6 9.3h3M11.5 7h3M11.5 9.3h3"/>
             </svg>
-            <span className="name">Trov&eacute;a Customize Store 5-Layer Deflection KB</span>
+            <span className="name">Trov&eacute;a Customize Store Step-by-Step Guide</span>
             <div className="data-row-tags">
-              <span className="door">DOCS</span>
+              <span className="door">RUNBOOKS</span>
               <span className="class-tag self">Self-directed</span>
             </div>
           </div>
@@ -228,7 +228,7 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
             </svg>
             <span className="name">Mindframe Technical Architecture &amp; Runbook</span>
             <div className="data-row-tags">
-              <span className="door">DOCS</span>
+              <span className="door">RUNBOOKS</span>
               <span className="class-tag real">Real</span>
             </div>
           </div>
@@ -242,7 +242,7 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
             </svg>
             <span className="name">AcePadi Quality-Gate Eval Framework (3-Min Fast Track)</span>
             <div className="data-row-tags">
-              <span className="door">AI QA</span>
+              <span className="door">QUALITY CHECKS</span>
               <span className="class-tag real">Real</span>
             </div>
           </div>
@@ -254,9 +254,9 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
             <svg className="door-icon" viewBox="0 0 20 20" fill="none" stroke="var(--door-aiqa)" strokeWidth="2">
               <path d="M10 2.5l1.8 4.8 4.8 1.8-4.8 1.8L10 15.7l-1.8-4.8-4.8-1.8 4.8-1.8z"/>
             </svg>
-            <span className="name">Mindframe Multi-Provider Benchmark &amp; Hybrid Router</span>
+            <span className="name">Mindframe Multi-Provider Benchmark &amp; Router</span>
             <div className="data-row-tags">
-              <span className="door">AI QA</span>
+              <span className="door">QUALITY CHECKS</span>
               <span className="class-tag real">Real</span>
             </div>
           </div>
@@ -270,9 +270,9 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
               <rect x="4.5" y="9" width="11" height="7.5" rx="1.5"/>
               <path d="M7 9V6.5a3 3 0 0 1 6 0V9"/>
             </svg>
-            <span className="name">Real-World Experience Placement Pipeline</span>
+            <span className="name">Real-World Experience Field Placement</span>
             <div className="data-row-tags">
-              <span className="door">EXTERNAL</span>
+              <span className="door">FIELD WORK</span>
               <span className="class-tag real">Verified</span>
             </div>
           </div>

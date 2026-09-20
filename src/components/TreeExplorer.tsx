@@ -39,10 +39,10 @@ export const TreeExplorer: React.FC<TreeExplorerProps> = ({
 
         <div className="tree-divider"></div>
 
-        {/* Door 1: Support & Tech Ops */}
+        {/* Module 1: Troubleshooting & Fixes */}
         <div className="door-support">
           <div className="tree-folder-label">
-            <span className="mini-folder"></span>01-support-technical-ops/
+            <span className="mini-folder"></span>01-troubleshooting/
           </div>
           <div 
             className={`tree-child ${isPathActive('01-support-technical-ops/queue/README.md') ? 'active' : ''}`}
@@ -65,18 +65,18 @@ export const TreeExplorer: React.FC<TreeExplorerProps> = ({
           </div>
         </div>
 
-        {/* Door 2: Customer Success */}
+        {/* Module 2: User Onboarding & Support */}
         <div 
           className={`tree-folder-flat door-cs ${isPathActive('02-customer-success/README.md') ? 'active' : ''}`}
           onClick={() => handleSelect('02-customer-success/README.md')}
         >
-          <span className="mini-folder"></span>02-customer-success.md
+          <span className="mini-folder"></span>02-user-support.md
         </div>
 
-        {/* Door 3: Documentation & Knowledge Ops */}
+        {/* Module 3: Clear Guides & Runbooks */}
         <div className="door-docs">
           <div className="tree-folder-label">
-            <span className="mini-folder"></span>03-documentation-knowledge-ops/
+            <span className="mini-folder"></span>03-guides-runbooks/
           </div>
           <div 
             className={`tree-child ${isPathActive('03-documentation-knowledge-ops/customize-store-kb/README.md') ? 'active' : ''}`}
@@ -92,10 +92,10 @@ export const TreeExplorer: React.FC<TreeExplorerProps> = ({
           </div>
         </div>
 
-        {/* Door 4: AI Ops / Output QA */}
+        {/* Module 4: Automated Quality Checks */}
         <div className="door-aiqa">
           <div className="tree-folder-label">
-            <span className="mini-folder"></span>04-ai-ops-qa/
+            <span className="mini-folder"></span>04-quality-checks/
           </div>
           <div 
             className={`tree-child ${isPathActive('04-ai-ops-qa/eval-framework/README.md') ? 'active' : ''}`}
@@ -112,12 +112,12 @@ export const TreeExplorer: React.FC<TreeExplorerProps> = ({
           </div>
         </div>
 
-        {/* Door 5: Real-World Experience Placement */}
+        {/* Module 5: Field Work */}
         <div 
           className={`tree-folder-flat ${isPathActive('05-real-world/README.md') ? 'active' : ''}`}
           onClick={() => handleSelect('05-real-world/README.md')}
         >
-          <span className="mini-folder"></span>05-real-world/ <span className="lock-tag">verified</span>
+          <span className="mini-folder"></span>05-field-work/ <span className="lock-tag">verified</span>
         </div>
 
         <div className="tree-divider"></div>

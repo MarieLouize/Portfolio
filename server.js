@@ -83,20 +83,20 @@ const DOCS_CATALOG = [
   {
     id: 'DOOR-01',
     proofId: 'DOOR-01-INDEX',
-    title: 'Door 1: Support & Technical Operations',
-    door: 'Support & Technical Ops',
+    title: 'Part 1: Troubleshooting & Fixes',
+    door: 'Troubleshooting & Fixes',
     doorId: '01-support-technical-ops',
     doorNumber: 1,
     proofClass: 'DOOR LANDING',
     fastTrack: false,
     path: '01-support-technical-ops/README.md',
-    summary: 'Support operations index, capability mapping, and operational philosophies.'
+    summary: 'Troubleshooting index, log tracing procedures, and root-cause fix standards.'
   },
   {
     id: 'PROOF-01',
     proofId: 'WOS-SUP-001',
-    title: 'Proof 1: Support Queue (AcePadi + Trovéa)',
-    door: 'Support & Technical Ops',
+    title: 'Proof 1: Support Queue & Macros (AcePadi + Trovéa)',
+    door: 'Troubleshooting & Fixes',
     doorId: '01-support-technical-ops',
     doorNumber: 1,
     proofClass: 'REAL + SIMULATION',
@@ -108,7 +108,7 @@ const DOCS_CATALOG = [
     id: 'PROOF-02',
     proofId: 'WOS-SUP-002',
     title: 'Proof 2: Pipeline Root-Cause Fix (AcePadi)',
-    door: 'Support & Technical Ops',
+    door: 'Troubleshooting & Fixes',
     doorId: '01-support-technical-ops',
     doorNumber: 1,
     proofClass: 'REAL EXPERIENCE',
@@ -120,7 +120,7 @@ const DOCS_CATALOG = [
     id: 'PROOF-03',
     proofId: 'WOS-SUP-003',
     title: 'Proof 3: Deliberately Broken Integration (Trovéa)',
-    door: 'Support & Technical Ops',
+    door: 'Troubleshooting & Fixes',
     doorId: '01-support-technical-ops',
     doorNumber: 1,
     proofClass: 'SIMULATION',
@@ -131,8 +131,8 @@ const DOCS_CATALOG = [
   {
     id: 'PROOF-04',
     proofId: 'WOS-CS-004',
-    title: 'Proof 4: Beta Customer Success Program (AcePadi)',
-    door: 'Customer Success & Ops',
+    title: 'Part 2: Beta User Onboarding & Retention (AcePadi)',
+    door: 'User Onboarding & Support',
     doorId: '02-customer-success',
     doorNumber: 2,
     proofClass: 'REAL EXPERIENCE',
@@ -143,8 +143,8 @@ const DOCS_CATALOG = [
   {
     id: 'DOOR-03',
     proofId: 'DOOR-03-INDEX',
-    title: 'Door 3: Documentation & Knowledge Operations',
-    door: 'Documentation & Knowledge',
+    title: 'Part 3: Clear Guides & Runbooks',
+    door: 'Clear Guides & Runbooks',
     doorId: '03-documentation-knowledge-ops',
     doorNumber: 3,
     proofClass: 'DOOR LANDING',
@@ -155,8 +155,8 @@ const DOCS_CATALOG = [
   {
     id: 'PROOF-05',
     proofId: 'WOS-DOC-005',
-    title: 'Proof 5: Customize Store KB (Trovéa)',
-    door: 'Documentation & Knowledge',
+    title: 'Proof 5: Customize Store Step-by-Step Guide (Trovéa)',
+    door: 'Clear Guides & Runbooks',
     doorId: '03-documentation-knowledge-ops',
     doorNumber: 3,
     proofClass: 'SELF-DIRECTED',
@@ -168,7 +168,7 @@ const DOCS_CATALOG = [
     id: 'PROOF-06',
     proofId: 'WOS-DOC-006',
     title: 'Proof 6: Mindframe Technical Architecture & Runbook',
-    door: 'Documentation & Knowledge',
+    door: 'Clear Guides & Runbooks',
     doorId: '03-documentation-knowledge-ops',
     doorNumber: 3,
     proofClass: 'REAL EXPERIENCE',
@@ -179,20 +179,20 @@ const DOCS_CATALOG = [
   {
     id: 'DOOR-04',
     proofId: 'DOOR-04-INDEX',
-    title: 'Door 4: AI Operations & Output QA',
-    door: 'AI Operations & Output QA',
+    title: 'Part 4: Automated Quality Checks',
+    door: 'Automated Quality Checks',
     doorId: '04-ai-ops-qa',
     doorNumber: 4,
     proofClass: 'DOOR LANDING',
     fastTrack: false,
     path: '04-ai-ops-qa/README.md',
-    summary: 'AI output quality assurance, evaluation rubrics, and model benchmarking index.'
+    summary: 'Automated evaluation rubrics, test benchmarks, and quality gate index.'
   },
   {
     id: 'PROOF-07',
     proofId: 'WOS-AI-007',
     title: 'Proof 7: Quality-Gate Evaluation Framework (AcePadi)',
-    door: 'AI Operations & Output QA',
+    door: 'Automated Quality Checks',
     doorId: '04-ai-ops-qa',
     doorNumber: 4,
     proofClass: 'REAL EXPERIENCE',
@@ -203,8 +203,8 @@ const DOCS_CATALOG = [
   {
     id: 'PROOF-08',
     proofId: 'WOS-AI-008',
-    title: 'Proof 8: Multi-Provider Benchmark (Mindframe)',
-    door: 'AI Operations & Output QA',
+    title: 'Proof 8: Multi-Provider Benchmark & Router (Mindframe)',
+    door: 'Automated Quality Checks',
     doorId: '04-ai-ops-qa',
     doorNumber: 4,
     proofClass: 'REAL EXPERIENCE',
@@ -215,15 +215,15 @@ const DOCS_CATALOG = [
   {
     id: 'PROOF-09',
     proofId: 'WOS-EXT-009',
-    title: 'Proof 9: Real-World Experience Placement',
-    door: 'Cross-Cutting / External',
+    title: 'Part 5: Real-World Field Work',
+    door: 'Field Work',
     doorId: '05-real-world',
     doorNumber: 5,
     proofClass: 'OPEN',
     fastTrack: false,
     path: '05-real-world/README.md',
     summary: 'Honest pipeline tracker for external client/open-source contract and conversion template.'
-  }
+  },
 ];
 
 // Automated Audit Logic
