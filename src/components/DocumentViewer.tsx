@@ -148,7 +148,7 @@ export const DocumentViewer: React.FC<DocumentViewerProps> = ({
         const rawCode = decodeURIComponent(copyBtn.getAttribute('data-code-copy') || '');
         navigator.clipboard.writeText(rawCode).then(() => {
           const original = copyBtn.innerText;
-          copyBtn.innerText = 'Copied!';
+          copyBtn.innerText = 'Copied';
           setTimeout(() => { copyBtn.innerText = original; }, 1500);
         });
       }
@@ -198,9 +198,7 @@ export const DocumentViewer: React.FC<DocumentViewerProps> = ({
   };
 
   const copyMarkdown = () => {
-    navigator.clipboard.writeText(markdown).then(() => {
-      alert('Markdown copied to clipboard!');
-    });
+    navigator.clipboard.writeText(markdown);
   };
 
   const getBadgeClass = (pClass: string) => {
