@@ -19,9 +19,21 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
               <span className="close" title="System profile">&times;</span>
             </div>
             <div className="window-body">
-              <div className="avatar">ML</div>
+              <div className="avatar">
+                <img 
+                  src="/profile-pic.jpg" 
+                  alt="Marie-Louize" 
+                  className="avatar-img"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+                <span className="avatar-fallback">ML</span>
+              </div>
               <div>
-                <p className="hi">operator identifier:</p>
+                <p className="hi">
+                  Hi <span className="wave-hand">👋🏼</span>
+                </p>
                 <h2>Marie-Louize <span className="name-accent">— Technical Operator</span></h2>
                 <p className="role">Troubleshooting &middot; User Support &middot; Clear Runbooks &middot; Quality Checks</p>
                 <p className="quote">&ldquo;I make messy digital operations clearer and more repeatable.&rdquo;</p>
