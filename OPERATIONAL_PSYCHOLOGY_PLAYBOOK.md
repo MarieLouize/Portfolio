@@ -186,6 +186,16 @@ I code-switch fluently across three distinct audiences. I never speak to an engi
 > *Immediate Mitigation: Authored a 5-layer self-service guide with cache-bypass steps to deflect incoming tickets.*  
 > *Permanent Fix: Handed off a reproducible cURL ticket to Engineering to add cache purging to the save webhook."*
 
+### 4.4 Tactile Demystification: Taking People Behind the Control Panel
+Many technical operators use jargon as a wall to keep non-engineers out and sound superior. I do the exact opposite. 
+
+I treat software architectures like physical machinery. When an enterprise merchant or customer is panicked by an abstract glitch, I take them behind the glass partition and explain the mechanical reality with a tactile model:
+* I avoid bloodless abstractions like *"suboptimal latency"* or *"system degradation."*
+* I talk about choked connection pools, queues backing up like traffic behind a stalled truck, and edge caches acting like printed daily specials boards outside a restaurant.
+* I banish bloated Latinate corporate sludge (*utilize, facilitate, leverage, operationalize*). I use muscular Anglo-Saxon verbs (*trace, catch, break, hold, pull, prune*) to show exactly what the machinery is doing.
+
+When you explain the physical mechanics of why a system behaves the way it does, fear evaporates. People stop feeling helpless, and they start partnering with you on the fix.
+
 ---
 
 ## 5. Choice Architecture & Behavioral Persuasion
@@ -234,9 +244,20 @@ I use Robert Cialdini's commitment research: I ask for an asymmetric, near-zero-
 
 ---
 
-## 7. My Operating Standard
+## 7. My Operating Maxims & Standards
 
+### The Rules I Live By:
 1. **I never take system failures personally.** User anger is not an attack; it is diagnostic telemetry.
 2. **I never pass a problem upstream without a boundary.** Every bug handoff I author contains reproduction steps, logs, and a hypothesized failure plane.
 3. **I make the right operational choice the path of least resistance.** For customers, for peers, and for software engineers.
 4. **I leave behind living evidence.** Every crisis resolves into an SOP, an automated test assertion, or a knowledge base article so we never solve the same problem twice.
+
+### My Core Operational Epigrams:
+* *"A support ticket solved five times without an SOP is not customer support; it is an unlogged system outage."*
+* *"Documentation isn't an encyclopedia; it's an evacuation map."*
+* *"Protocols aren't handcuffs; they're the guardrails that prevent us from solving the exact same crisis twice."*
+* *"A slow query is rarely a database problem; it is usually an unanswered architecture question."*
+* *"Good error messages never apologize; they show exactly where the state diverged."*
+* *"To build a system that bends, you must first map where it snaps."*
+* *"An edge case ignored in development is an incident waiting on call."*
+* *"Users don't dislike system rules; they dislike silent dead ends."*
