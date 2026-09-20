@@ -503,7 +503,38 @@ section {
     display: flex;
     gap: 25px;
     align-items: flex-start;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+}
+
+.avatar-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+}
+
+.window-intro {
+    flex: 1;
+    min-width: 0;
+}
+
+.hi-greeting-desktop {
+    display: flex;
+    font-family: var(--font-pixel);
+    font-size: 26px;
+    color: var(--midnight-lagoon);
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2px;
+}
+
+.hi-greeting-mobile {
+    display: none;
+    font-family: var(--font-pixel);
+    font-size: 24px;
+    color: var(--midnight-lagoon);
+    align-items: center;
+    gap: 8px;
 }
 
 .avatar {
@@ -545,13 +576,10 @@ section {
 
 .window-body .hi {
     font-family: var(--font-pixel);
-    font-size: 22px;
+    font-size: 18px;
     color: var(--ink-soft);
     margin: 0 0 2px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    text-transform: none;
+    text-transform: uppercase;
 }
 
 @keyframes wave-hand {
@@ -1489,8 +1517,16 @@ footer.pagefoot {
         font-size: 18px;
     }
     .window-body {
+        flex-direction: column;
+        align-items: flex-start;
         padding: 16px 12px;
         gap: 14px;
+    }
+    .hi-greeting-desktop {
+        display: none;
+    }
+    .hi-greeting-mobile {
+        display: inline-flex;
     }
     .avatar {
         width: 54px;
