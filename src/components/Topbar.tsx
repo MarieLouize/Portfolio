@@ -16,7 +16,12 @@ export const Topbar: React.FC<TopbarProps> = ({
 }) => {
   return (
     <header className="vault-topbar">
-      <div className="brand-block">
+      <div 
+        className="brand-block" 
+        onClick={() => onSelectDoc('profile.md')} 
+        style={{ cursor: 'pointer' }}
+        title="Go to Marie-Louize Systems Profile (profile.md)"
+      >
         <div className="brand-badge-box">ML</div>
         <div>
           <div className="brand-text-title">Marie-Louize</div>

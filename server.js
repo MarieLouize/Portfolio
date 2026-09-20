@@ -9,6 +9,18 @@ const REPO_ROOT = __dirname;
 // The canonical documents catalog
 const DOCS_CATALOG = [
   {
+    id: 'PROFILE',
+    proofId: 'SYS-PROFILE',
+    title: 'profile.md — Systems & Operator Profile',
+    door: 'Overview',
+    doorId: '00-overview',
+    doorNumber: 0,
+    proofClass: 'FOUNDATION',
+    fastTrack: false,
+    path: 'profile.md',
+    summary: 'Marie-Louize operator profile, 4-door architecture, 9-proof roster, and systems philosophy.'
+  },
+  {
     id: 'ROOT',
     proofId: 'VAULT-000',
     title: 'Evidence Vault Overview & Fast Track',

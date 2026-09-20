@@ -5,8 +5,10 @@ import { Topbar } from './components/Topbar';
 import { FastTrackBar } from './components/FastTrackBar';
 import { TreeExplorer } from './components/TreeExplorer';
 import { DocumentViewer } from './components/DocumentViewer';
+import { ProfileHome } from './components/ProfileHome';
 import { AuditModal } from './components/AuditModal';
 import './styles/design-tokens.css';
+import './styles/home.css';
 
 export const App: React.FC = () => {
   const [docs, setDocs] = useState<DocItem[]>([]);
@@ -37,8 +39,8 @@ export const App: React.FC = () => {
         const catalog = await fetchDocsCatalog();
         setDocs(catalog);
 
-        // Check hash or load README.md
-        const hash = window.location.hash ? window.location.hash.substring(1) : 'README.md';
+        // Check hash or load profile.md
+        const hash = window.location.hash ? window.location.hash.substring(1) : 'profile.md';
         const initial = catalog.find(d => d.path === hash) || catalog[0];
         if (initial) {
           await loadDocument(initial.path, catalog);
@@ -136,15 +138,19 @@ export const App: React.FC = () => {
             onSelectDoc={(p) => loadDocument(p)}
           />
 
-          <DocumentViewer 
-            doc={selectedDoc}
-            markdown={markdown}
-            onSelectDoc={(p) => loadDocument(p)}
-            onPrevDoc={prevDoc ? () => loadDocument(prevDoc.path) : undefined}
-            onNextDoc={nextDoc ? () => loadDocument(nextDoc.path) : undefined}
-            prevTitle={prevDoc?.title}
-            nextTitle={nextDoc?.title}
-          />
+          {selectedDoc.path === 'profile.md' ? (
+            <ProfileHome onSelectDoc={(p) => loadDocument(p)} />
+          ) : (
+            <DocumentViewer 
+              doc={selectedDoc}
+              markdown={markdown}
+              onSelectDoc={(p) => loadDocument(p)}
+              onPrevDoc={prevDoc ? () => loadDocument(prevDoc.path) : undefined}
+              onNextDoc={nextDoc ? () => loadDocument(nextDoc.path) : undefined}
+              prevTitle={prevDoc?.title}
+              nextTitle={nextDoc?.title}
+            />
+          )}
         </div>
       )}
 
