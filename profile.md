@@ -10,7 +10,7 @@
 
 ## 1. Executive Summary
 
-I look at software systems the way an engineer looks at physical machinery under load. When a customer is stuck and an integration breaks, I do not guess, apologize, or hide behind corporate boilerplate. I separate human friction from technical state, find where the machine failed, and walk everyone through to a clean resolution.
+I work between the people using software and the technical systems running underneath. When an integration breaks or a customer gets stuck, I separate human confusion from actual system state, trace the failure to its source, and guide everyone toward a clean resolution.
 
 My work follows four practical steps across the lifecycle of a problem:
 
