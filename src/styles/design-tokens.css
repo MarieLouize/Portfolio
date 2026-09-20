@@ -969,6 +969,62 @@ section {
     border-style: dashed;
 }
 
+/* --- CONTACT CARD --- */
+.contact-card {
+    border: var(--border-thick);
+    border-radius: var(--radius-md);
+    background-color: var(--surface);
+    background-image: var(--grain);
+    box-shadow: var(--shadow-hard);
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    font-size: 15px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed var(--line);
+}
+
+.contact-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.contact-tag {
+    font-family: var(--font-pixel);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--vanilla-cream);
+    background: var(--midnight-lagoon);
+    border: 1.5px solid var(--midnight-lagoon);
+    border-radius: 4px;
+    padding: 2px 10px;
+    min-width: 65px;
+    text-align: center;
+    box-shadow: 2px 2px 0px var(--rosewood);
+    flex-shrink: 0;
+}
+
+.contact-link {
+    color: var(--midnight-lagoon);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.1s;
+    word-break: break-all;
+}
+
+.contact-link:hover {
+    color: var(--rosewood);
+    text-decoration: underline;
+}
+
 /* --- FOOTER LINKS --- */
 .tool-strip {
     background-color: var(--midnight-lagoon);

@@ -52,7 +52,10 @@ $$\text{DIAGNOSE} \longrightarrow \text{ISOLATE} \longrightarrow \text{COMMUNICA
 
 ## 4. Contact & Telemetry Channels
 
+* **Email:** [kennedymarielouize@gmail.com](mailto:kennedymarielouize@gmail.com)
+* **Phone:** [+23459146012](tel:+23459146012)
+* **Resume / CV:** [Curriculum Vitae & Credentials](#)
+<!-- Temporarily commented out:
 * **GitHub:** [Verified Commits & Repositories](https://github.com)
 * **LinkedIn:** [Professional Network & Endorsements](https://linkedin.com)
-* **Resume / CV:** [B.Sc. Computer Science Curriculum & Credentials](#)
-* **Email:** [Direct Professional Contact](mailto:)
+-->

@@ -53,6 +53,7 @@ export const Topbar: React.FC<TopbarProps> = ({
           Contact
         </a>
 
+        {/* Temporarily commented out per user instruction:
         <a 
           className="icon-link" 
           href="https://github.com" 
@@ -78,6 +79,7 @@ export const Topbar: React.FC<TopbarProps> = ({
             <path d="M2.7 5.5h2.1V13H2.7V5.5zM3.75 2.4a1.22 1.22 0 1 1 0 2.44 1.22 1.22 0 0 1 0-2.44zM6.6 5.5h2v1.02h.03c.28-.52 1-1.08 2.05-1.08 2.2 0 2.6 1.44 2.6 3.32V13h-2.1V9.2c0-.9-.02-2.06-1.26-2.06-1.26 0-1.45.98-1.45 2v3.87H6.6V5.5z"/>
           </svg>
         </a>
+        */}
 
         <button 
           className="icon-link" 

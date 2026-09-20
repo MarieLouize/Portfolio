@@ -276,7 +276,7 @@ function runAudit() {
     while ((match = linkRegex.exec(content)) !== null) {
       const linkTarget = match[2];
       // Check relative file links (.md or paths without http)
-      if (!linkTarget.startsWith('http') && !linkTarget.startsWith('#') && !linkTarget.startsWith('mailto:')) {
+      if (!linkTarget.startsWith('http') && !linkTarget.startsWith('#') && !linkTarget.startsWith('mailto:') && !linkTarget.startsWith('tel:')) {
         const cleanTarget = linkTarget.split('#')[0];
         if (cleanTarget) {
           const resolved = path.resolve(path.dirname(fullPath), cleanTarget);

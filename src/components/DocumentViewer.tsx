@@ -56,7 +56,7 @@ export const DocumentViewer: React.FC<DocumentViewerProps> = ({
       text = String(arg3 || '');
     }
 
-    if (!href.startsWith('http://') && !href.startsWith('https://') && !href.startsWith('mailto:') && !href.startsWith('#')) {
+    if (!href.startsWith('http://') && !href.startsWith('https://') && !href.startsWith('mailto:') && !href.startsWith('tel:') && !href.startsWith('#')) {
       const safeHref = href.replace(/'/g, "\\'");
       return `<a href="#" data-doc-link="${safeHref}" title="${title}">${text || href}</a>`;
     }

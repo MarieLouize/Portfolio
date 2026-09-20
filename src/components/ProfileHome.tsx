@@ -275,14 +275,46 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
         </div>
       </section>
 
-      {/* FOOTER LINKS */}
+      {/* CONTACT CHANNELS */}
       <section id="contact">
-        <div className="section-label">Elsewhere</div>
-        <div className="tool-strip">
+        <div className="section-label">Contact</div>
+        <div className="contact-card">
+          <div className="contact-item">
+            <span className="contact-tag">EMAIL</span>
+            <a href="mailto:kennedymarielouize@gmail.com" className="contact-link">
+              kennedymarielouize@gmail.com
+            </a>
+          </div>
+          <div className="contact-item">
+            <span className="contact-tag">PHONE</span>
+            <a href="tel:+23459146012" className="contact-link">
+              +23459146012
+            </a>
+          </div>
+          <div className="contact-item">
+            <span className="contact-tag">CV</span>
+            <a 
+              href="#profile.md" 
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectDoc('profile.md');
+              }} 
+              className="contact-link"
+              title="Curriculum Vitae"
+            >
+              Curriculum Vitae (Profile View)
+            </a>
+          </div>
+        </div>
+
+        <div className="tool-strip" style={{ marginTop: '16px' }}>
+          <a className="tool-badge" href="mailto:kennedymarielouize@gmail.com" title="Email: kennedymarielouize@gmail.com">@</a>
+          <a className="tool-badge" href="tel:+23459146012" title="Phone: +23459146012">#</a>
+          <a className="tool-badge" href="#profile.md" onClick={(e) => { e.preventDefault(); onSelectDoc('profile.md'); }} title="Curriculum Vitae / Profile">cv</a>
+          {/* Temporarily commented out per user instruction:
           <a className="tool-badge" href="https://linkedin.com" target="_blank" rel="noreferrer" title="LinkedIn">in</a>
           <a className="tool-badge" href="https://github.com" target="_blank" rel="noreferrer" title="GitHub">gh</a>
-          <a className="tool-badge" href="#profile.md" onClick={() => onSelectDoc('profile.md')} title="Resume / Profile">cv</a>
-          <a className="tool-badge" href="mailto:" title="Email Contact">@</a>
+          */}
         </div>
       </section>
 
