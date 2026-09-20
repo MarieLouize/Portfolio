@@ -33,6 +33,42 @@ const DOCS_CATALOG = [
     summary: 'Shared ticket standard template enforcing Claim -> Artifact -> Process -> Result -> Reflection.'
   },
   {
+    id: 'VOICE-STANDARD',
+    proofId: 'STD-VOICE',
+    title: 'Voice & Lexical Architecture Standard',
+    door: 'Standards & Protocols',
+    doorId: '00-standards',
+    doorNumber: 0,
+    proofClass: 'PROTOCOL',
+    fastTrack: false,
+    path: 'VOICE_AND_LEXICAL_STANDARD.md',
+    summary: 'The Resolute Systems Craftsman voice standard: 5 axioms, muscular verb filter, and operational epigrams.'
+  },
+  {
+    id: 'OPERATIONAL-PLAYBOOK',
+    proofId: 'STD-PSYCH',
+    title: 'Operational Psychology & Tactical Playbook',
+    door: 'Standards & Protocols',
+    doorId: '00-standards',
+    doorNumber: 0,
+    proofClass: 'PROTOCOL',
+    fastTrack: false,
+    path: 'OPERATIONAL_PSYCHOLOGY_PLAYBOOK.md',
+    summary: 'Marie\'s first-person operating manual: behavioral systemics, cognitive decoupling, and tactile demystification.'
+  },
+  {
+    id: 'MARKET-MATRIX',
+    proofId: 'MKT-001',
+    title: 'Market Demand & Proof Matrix (N=1,192)',
+    door: 'Standards & Protocols',
+    doorId: '00-standards',
+    doorNumber: 0,
+    proofClass: 'FOUNDATION',
+    fastTrack: false,
+    path: 'MARKET_SKILL_MATRIX.md',
+    summary: 'Empirical analysis of 1,192 opportunities across 4 doors: demanded proofs, platforms, and core competencies.'
+  },
+  {
     id: 'DOOR-01',
     proofId: 'DOOR-01-INDEX',
     title: 'Door 1: Support & Technical Operations',
