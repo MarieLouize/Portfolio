@@ -118,17 +118,9 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
             I look at software systems the way an engineer looks at physical machinery under load. When a customer is stuck and an integration breaks, I do not guess, apologize, or hide behind corporate boilerplate. I separate human friction from technical state, find where the machine failed, and walk everyone through to a clean resolution.
           </p>
           <p>
-            My work follows four practical steps across the lifecycle of a problem:
+            Every proof in this vault is a verified artifact from a single operational habit: find what broke, help the people affected, write down how it works, and build automated checks so it stays fixed. A support ticket solved five times without an SOP is not support; it is an unlogged outage.
           </p>
-          <div className="failure-planes-list">
-            <div><strong>01. Troubleshooting &amp; Fixes:</strong> Catching live errors, tracing logs, and fixing the root cause.</div>
-            <div><strong>02. User Onboarding &amp; Support:</strong> Guiding users through confusing breaks and keeping them steady.</div>
-            <div><strong>03. Clear Guides &amp; Runbooks:</strong> Turning tribal knowledge into living, step-by-step instructions.</div>
-            <div><strong>04. Automated Quality Checks:</strong> Writing automated tests and benchmarks so problems never recur.</div>
-          </div>
-          <p>
-            A support ticket solved five times without an SOP is not support; it is an unlogged outage. Every proof in this vault resolves through a simple operational cycle:
-          </p>
+          
           <div className="cycle-strip">
             <span className="step">DIAGNOSE</span><span className="arrow">&rarr;</span>
             <span className="step">ISOLATE</span><span className="arrow">&rarr;</span>
@@ -136,36 +128,32 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
             <span className="step">CODIFY</span><span className="arrow">&rarr;</span>
             <span className="step">PREVENT</span>
           </div>
-        </div>
-      </section>
 
-      {/* NAV GUIDE */}
-      <section>
-        <div className="section-label">How this work connects</div>
-        <div className="guide-card">
-          <p>
-            Every proof here is a verified artifact from a single operational habit: find what broke, help the people affected, write down how it works, and build automated checks so it stays fixed. Each stage carries a consistent color tag across the explorer and the individual runbooks.
-          </p>
-          <div className="key-row">
-            <div className="key-item door-support">
-              <TerminalIcon className="key-icon" color="var(--door-support)" size={18} />
-              Troubleshooting &amp; Fixes
+          <div style={{ marginTop: '20px' }}>
+            <div style={{ fontSize: '14px', color: 'var(--ink-soft)', marginBottom: '10px' }}>
+              Each operational stage carries a consistent color tag and icon across the explorer, the proof roster, and individual runbooks:
             </div>
-            <div className="key-item door-cs">
-              <ChatIcon className="key-icon" color="var(--door-cs)" size={18} />
-              User Onboarding &amp; Support
-            </div>
-            <div className="key-item door-docs">
-              <ManualIcon className="key-icon" color="var(--door-docs)" size={18} />
-              Clear Guides &amp; Runbooks
-            </div>
-            <div className="key-item door-aiqa">
-              <GaugeIcon className="key-icon" color="var(--door-aiqa)" size={18} />
-              Automated Quality Checks
-            </div>
-            <div className="key-item">
-              <GlobeIcon className="key-icon" color="var(--ink-soft)" size={18} />
-              Field Work
+            <div className="key-row">
+              <div className="key-item door-support">
+                <TerminalIcon className="key-icon" color="var(--door-support)" size={18} />
+                Troubleshooting &amp; Fixes
+              </div>
+              <div className="key-item door-cs">
+                <ChatIcon className="key-icon" color="var(--door-cs)" size={18} />
+                User Onboarding &amp; Support
+              </div>
+              <div className="key-item door-docs">
+                <ManualIcon className="key-icon" color="var(--door-docs)" size={18} />
+                Clear Guides &amp; Runbooks
+              </div>
+              <div className="key-item door-aiqa">
+                <GaugeIcon className="key-icon" color="var(--door-aiqa)" size={18} />
+                Automated Quality Checks
+              </div>
+              <div className="key-item">
+                <GlobeIcon className="key-icon" color="var(--ink-soft)" size={18} />
+                Field Work
+              </div>
             </div>
           </div>
         </div>
