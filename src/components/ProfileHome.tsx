@@ -81,7 +81,7 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
           <p>
             My work bridges four technical failure planes, organized directly by folder in the repository tree:
           </p>
-          <div style={{ marginBottom: '20px', fontSize: '15px', lineHeight: '1.8', paddingLeft: '5px' }}>
+          <div className="failure-planes-list">
             <div><strong>01. Support &amp; Technical Operations:</strong> Reproducible triage, edge-cache invalidation, and incident command.</div>
             <div><strong>02. Customer Success:</strong> Behavioral choice architecture, micro-commitment ladders, and churn defense.</div>
             <div><strong>03. Documentation &amp; Knowledge Operations:</strong> Converting tribal panic into living evacuation-map runbooks.</div>
@@ -151,9 +151,11 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
               <path d="M4 12l4-8 4 8M6.5 10h3M12 15l2.5-6 2.5 6M13.2 12.5h2.6"/>
             </svg>
             <span className="name">Support &amp; Tech Ops Queue (AP-019 to TR-S02)</span>
-            <span className="door">SUPPORT</span>
-            <span className="class-tag real">Real</span>
-            <span className="class-tag sim">Sim</span>
+            <div className="data-row-tags">
+              <span className="door">SUPPORT</span>
+              <span className="class-tag real">Real</span>
+              <span className="class-tag sim">Sim</span>
+            </div>
           </div>
 
           <div 
@@ -164,8 +166,10 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
               <path d="M4 12l4-8 4 8M6.5 10h3M12 15l2.5-6 2.5 6M13.2 12.5h2.6"/>
             </svg>
             <span className="name">Edge-Cache Pipeline Diagnosis (3-Min Fast Track)</span>
-            <span className="door">SUPPORT</span>
-            <span className="class-tag real">Real</span>
+            <div className="data-row-tags">
+              <span className="door">SUPPORT</span>
+              <span className="class-tag real">Real</span>
+            </div>
           </div>
 
           <div 
@@ -176,8 +180,10 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
               <path d="M4 12l4-8 4 8M6.5 10h3M12 15l2.5-6 2.5 6M13.2 12.5h2.6"/>
             </svg>
             <span className="name">Broken Webhook Incident Postmortem</span>
-            <span className="door">SUPPORT</span>
-            <span className="class-tag sim">Simulation</span>
+            <div className="data-row-tags">
+              <span className="door">SUPPORT</span>
+              <span className="class-tag sim">Simulation</span>
+            </div>
           </div>
 
           <div 
@@ -189,8 +195,10 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
               <path d="M6.5 8.5h7M6.5 10.8h4.5"/>
             </svg>
             <span className="name">AcePadi Beta CS Onboarding Program</span>
-            <span className="door">CS</span>
-            <span className="class-tag real">Real</span>
+            <div className="data-row-tags">
+              <span className="door">CS</span>
+              <span className="class-tag real">Real</span>
+            </div>
           </div>
 
           <div 
@@ -203,8 +211,10 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
               <path d="M6 7h3M6 9.3h3M11.5 7h3M11.5 9.3h3"/>
             </svg>
             <span className="name">Trov&eacute;a Customize Store 5-Layer Deflection KB</span>
-            <span className="door">DOCS</span>
-            <span className="class-tag self">Self-directed</span>
+            <div className="data-row-tags">
+              <span className="door">DOCS</span>
+              <span className="class-tag self">Self-directed</span>
+            </div>
           </div>
 
           <div 
@@ -217,8 +227,10 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
               <path d="M6 7h3M6 9.3h3M11.5 7h3M11.5 9.3h3"/>
             </svg>
             <span className="name">Mindframe Technical Architecture &amp; Runbook</span>
-            <span className="door">DOCS</span>
-            <span className="class-tag real">Real</span>
+            <div className="data-row-tags">
+              <span className="door">DOCS</span>
+              <span className="class-tag real">Real</span>
+            </div>
           </div>
 
           <div 
@@ -229,8 +241,10 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
               <path d="M10 2.5l1.8 4.8 4.8 1.8-4.8 1.8L10 15.7l-1.8-4.8-4.8-1.8 4.8-1.8z"/>
             </svg>
             <span className="name">AcePadi Quality-Gate Eval Framework (3-Min Fast Track)</span>
-            <span className="door">AI QA</span>
-            <span className="class-tag real">Real</span>
+            <div className="data-row-tags">
+              <span className="door">AI QA</span>
+              <span className="class-tag real">Real</span>
+            </div>
           </div>
 
           <div 
@@ -241,8 +255,10 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
               <path d="M10 2.5l1.8 4.8 4.8 1.8-4.8 1.8L10 15.7l-1.8-4.8-4.8-1.8 4.8-1.8z"/>
             </svg>
             <span className="name">Mindframe Multi-Provider Benchmark &amp; Hybrid Router</span>
-            <span className="door">AI QA</span>
-            <span className="class-tag real">Real</span>
+            <div className="data-row-tags">
+              <span className="door">AI QA</span>
+              <span className="class-tag real">Real</span>
+            </div>
           </div>
 
           <div 
@@ -255,8 +271,10 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
               <path d="M7 9V6.5a3 3 0 0 1 6 0V9"/>
             </svg>
             <span className="name">Real-World Experience Placement Pipeline</span>
-            <span className="door">EXTERNAL</span>
-            <span className="class-tag real">Verified</span>
+            <div className="data-row-tags">
+              <span className="door">EXTERNAL</span>
+              <span className="class-tag real">Verified</span>
+            </div>
           </div>
         </div>
       </section>

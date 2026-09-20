@@ -33,6 +33,7 @@ export const DocumentViewer: React.FC<DocumentViewerProps> = ({
   nextTitle
 }) => {
   const [isRaw, setIsRaw] = useState(false);
+  const [copiedMd, setCopiedMd] = useState(false);
   const articleRef = useRef<HTMLDivElement>(null);
 
   // Setup marked renderer
@@ -198,7 +199,10 @@ export const DocumentViewer: React.FC<DocumentViewerProps> = ({
   };
 
   const copyMarkdown = () => {
-    navigator.clipboard.writeText(markdown);
+    navigator.clipboard.writeText(markdown).then(() => {
+      setCopiedMd(true);
+      setTimeout(() => setCopiedMd(false), 1500);
+    });
   };
 
   const getBadgeClass = (pClass: string) => {
@@ -225,7 +229,7 @@ export const DocumentViewer: React.FC<DocumentViewerProps> = ({
         {/* Proof Hero Card */}
         <div className="doc-header-card">
           <div className="doc-header-meta">
-            <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <div className="doc-tags-row">
               <span className="class-tag real">{doc.proofId}</span>
               <span className={`class-tag ${getBadgeClass(doc.proofClass)}`}>{doc.proofClass}</span>
               <span className="class-tag">{doc.door}</span>
@@ -236,20 +240,17 @@ export const DocumentViewer: React.FC<DocumentViewerProps> = ({
               )}
             </div>
 
-            <div style={{ display: 'flex', gap: '8px' }}>
+            <div className="doc-action-btns">
               <button 
                 className="cta-btn" 
-                style={{ padding: '4px 12px', fontSize: '15px' }} 
                 onClick={copyMarkdown}
                 title="Copy raw Markdown"
               >
-                Copy .md
+                {copiedMd ? 'Copied' : 'Copy .md'}
               </button>
               <button 
                 className="cta-btn" 
                 style={{ 
-                  padding: '4px 12px', 
-                  fontSize: '15px', 
                   background: isRaw ? 'var(--midnight-lagoon)' : 'var(--sage-leaf)',
                   color: isRaw ? 'var(--vanilla-cream)' : 'var(--midnight-lagoon)'
                 }} 
@@ -291,7 +292,8 @@ export const DocumentViewer: React.FC<DocumentViewerProps> = ({
             whiteSpace: 'pre-wrap',
             fontFamily: 'var(--font-mono)',
             fontSize: '13px',
-            lineHeight: '1.6'
+            lineHeight: '1.6',
+            overflowX: 'auto'
           }}>
             {markdown}
           </pre>
@@ -304,18 +306,10 @@ export const DocumentViewer: React.FC<DocumentViewerProps> = ({
         )}
 
         {/* Prev / Next Pagination */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '16px',
-          padding: '20px 30px',
-          borderTop: 'var(--border-thick)',
-          background: 'var(--vanilla-cream)'
-        }}>
+        <div className="doc-pagination">
           {onPrevDoc && prevTitle ? (
             <button 
-              className="cta-btn" 
-              style={{ textAlign: 'left', overflow: 'hidden', textOverflow: 'ellipsis' }} 
+              className="cta-btn doc-pager-btn prev" 
               onClick={onPrevDoc}
             >
               ← Prev: {prevTitle}
@@ -324,8 +318,7 @@ export const DocumentViewer: React.FC<DocumentViewerProps> = ({
 
           {onNextDoc && nextTitle ? (
             <button 
-              className="cta-btn" 
-              style={{ textAlign: 'right', overflow: 'hidden', textOverflow: 'ellipsis', background: 'var(--midnight-lagoon)' }} 
+              className="cta-btn doc-pager-btn next" 
               onClick={onNextDoc}
             >
               Next: {nextTitle} →
