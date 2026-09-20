@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { marked } from 'marked';
 import { DocItem } from '../types/portfolio';
+import { getStageIcon } from './StageIcons';
 
 declare global {
   interface Window {
@@ -267,7 +268,10 @@ export const DocumentViewer: React.FC<DocumentViewerProps> = ({
           <div className="doc-meta-grid">
             <div className="doc-meta-item">
               <div className="k">Operational Stage</div>
-              <div className="v">{doc.door}</div>
+              <div className="v" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                {getStageIcon(doc.door, 'door-icon', 16)}
+                <span>{doc.door}</span>
+              </div>
             </div>
             <div className="doc-meta-item">
               <div className="k">Proof Classification</div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { TerminalIcon, ChatIcon, ManualIcon, GaugeIcon, GlobeIcon } from './StageIcons';
 
 interface ProfileHomeProps {
   onSelectDoc: (path: string) => void;
@@ -109,31 +110,24 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
           </p>
           <div className="key-row">
             <div className="key-item door-support">
-              <svg className="key-icon" viewBox="0 0 20 20" fill="none" stroke="var(--door-support)" strokeWidth="2">
-                <path d="M4 12l4-8 4 8M6.5 10h3M12 15l2.5-6 2.5 6M13.2 12.5h2.6"/>
-              </svg>
+              <TerminalIcon className="key-icon" color="var(--door-support)" size={18} />
               Troubleshooting &amp; Fixes
             </div>
             <div className="key-item door-cs">
-              <svg className="key-icon" viewBox="0 0 20 20" fill="none" stroke="var(--door-cs)" strokeWidth="2">
-                <path d="M3 5h14v8H8l-3 3v-3H3z"/>
-                <path d="M6.5 8.5h7M6.5 10.8h4.5"/>
-              </svg>
+              <ChatIcon className="key-icon" color="var(--door-cs)" size={18} />
               User Onboarding &amp; Support
             </div>
             <div className="key-item door-docs">
-              <svg className="key-icon" viewBox="0 0 20 20" fill="none" stroke="var(--door-docs)" strokeWidth="2">
-                <path d="M4 4.5h6.5v11H4z"/>
-                <path d="M10.5 4.5H16v11h-5.5"/>
-                <path d="M6 7h3M6 9.3h3M11.5 7h3M11.5 9.3h3"/>
-              </svg>
+              <ManualIcon className="key-icon" color="var(--door-docs)" size={18} />
               Clear Guides &amp; Runbooks
             </div>
             <div className="key-item door-aiqa">
-              <svg className="key-icon" viewBox="0 0 20 20" fill="none" stroke="var(--door-aiqa)" strokeWidth="2">
-                <path d="M10 2.5l1.8 4.8 4.8 1.8-4.8 1.8L10 15.7l-1.8-4.8-4.8-1.8 4.8-1.8z"/>
-              </svg>
+              <GaugeIcon className="key-icon" color="var(--door-aiqa)" size={18} />
               Automated Quality Checks
+            </div>
+            <div className="key-item">
+              <GlobeIcon className="key-icon" color="var(--ink-soft)" size={18} />
+              Field Work
             </div>
           </div>
         </div>
@@ -147,9 +141,7 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
             className="data-row door-support"
             onClick={() => onSelectDoc('01-support-technical-ops/queue/README.md')}
           >
-            <svg className="door-icon" viewBox="0 0 20 20" fill="none" stroke="var(--door-support)" strokeWidth="2">
-              <path d="M4 12l4-8 4 8M6.5 10h3M12 15l2.5-6 2.5 6M13.2 12.5h2.6"/>
-            </svg>
+            <TerminalIcon className="door-icon" color="var(--door-support)" />
             <span className="name">Support Queue Triage &amp; Macros (AP-019 to TR-S02)</span>
             <div className="data-row-tags">
               <span className="door">FIXES</span>
@@ -162,9 +154,7 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
             className="data-row door-support"
             onClick={() => onSelectDoc('01-support-technical-ops/pipeline-diagnosis/README.md')}
           >
-            <svg className="door-icon" viewBox="0 0 20 20" fill="none" stroke="var(--door-support)" strokeWidth="2">
-              <path d="M4 12l4-8 4 8M6.5 10h3M12 15l2.5-6 2.5 6M13.2 12.5h2.6"/>
-            </svg>
+            <TerminalIcon className="door-icon" color="var(--door-support)" />
             <span className="name">Edge-Cache Pipeline Diagnosis (3-Min Fast Track)</span>
             <div className="data-row-tags">
               <span className="door">FIXES</span>
@@ -176,9 +166,7 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
             className="data-row door-support"
             onClick={() => onSelectDoc('01-support-technical-ops/incident-investigation/README.md')}
           >
-            <svg className="door-icon" viewBox="0 0 20 20" fill="none" stroke="var(--door-support)" strokeWidth="2">
-              <path d="M4 12l4-8 4 8M6.5 10h3M12 15l2.5-6 2.5 6M13.2 12.5h2.6"/>
-            </svg>
+            <TerminalIcon className="door-icon" color="var(--door-support)" />
             <span className="name">Broken Webhook Incident Postmortem</span>
             <div className="data-row-tags">
               <span className="door">FIXES</span>
@@ -190,10 +178,7 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
             className="data-row door-cs"
             onClick={() => onSelectDoc('02-customer-success/README.md')}
           >
-            <svg className="door-icon" viewBox="0 0 20 20" fill="none" stroke="var(--door-cs)" strokeWidth="2">
-              <path d="M3 5h14v8H8l-3 3v-3H3z"/>
-              <path d="M6.5 8.5h7M6.5 10.8h4.5"/>
-            </svg>
+            <ChatIcon className="door-icon" color="var(--door-cs)" />
             <span className="name">AcePadi Beta User Onboarding &amp; Retention Program</span>
             <div className="data-row-tags">
               <span className="door">USER OPS</span>
@@ -205,11 +190,7 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
             className="data-row door-docs"
             onClick={() => onSelectDoc('03-documentation-knowledge-ops/customize-store-kb/README.md')}
           >
-            <svg className="door-icon" viewBox="0 0 20 20" fill="none" stroke="var(--door-docs)" strokeWidth="2">
-              <path d="M4 4.5h6.5v11H4z"/>
-              <path d="M10.5 4.5H16v11h-5.5"/>
-              <path d="M6 7h3M6 9.3h3M11.5 7h3M11.5 9.3h3"/>
-            </svg>
+            <ManualIcon className="door-icon" color="var(--door-docs)" />
             <span className="name">Trov&eacute;a Customize Store Step-by-Step Guide</span>
             <div className="data-row-tags">
               <span className="door">RUNBOOKS</span>
@@ -221,11 +202,7 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
             className="data-row door-docs"
             onClick={() => onSelectDoc('03-documentation-knowledge-ops/mindframe-docs/README.md')}
           >
-            <svg className="door-icon" viewBox="0 0 20 20" fill="none" stroke="var(--door-docs)" strokeWidth="2">
-              <path d="M4 4.5h6.5v11H4z"/>
-              <path d="M10.5 4.5H16v11h-5.5"/>
-              <path d="M6 7h3M6 9.3h3M11.5 7h3M11.5 9.3h3"/>
-            </svg>
+            <ManualIcon className="door-icon" color="var(--door-docs)" />
             <span className="name">Mindframe Technical Architecture &amp; Runbook</span>
             <div className="data-row-tags">
               <span className="door">RUNBOOKS</span>
@@ -237,9 +214,7 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
             className="data-row door-aiqa"
             onClick={() => onSelectDoc('04-ai-ops-qa/eval-framework/README.md')}
           >
-            <svg className="door-icon" viewBox="0 0 20 20" fill="none" stroke="var(--door-aiqa)" strokeWidth="2">
-              <path d="M10 2.5l1.8 4.8 4.8 1.8-4.8 1.8L10 15.7l-1.8-4.8-4.8-1.8 4.8-1.8z"/>
-            </svg>
+            <GaugeIcon className="door-icon" color="var(--door-aiqa)" />
             <span className="name">AcePadi Quality-Gate Eval Framework (3-Min Fast Track)</span>
             <div className="data-row-tags">
               <span className="door">QUALITY CHECKS</span>
@@ -251,9 +226,7 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
             className="data-row door-aiqa"
             onClick={() => onSelectDoc('04-ai-ops-qa/model-benchmark/README.md')}
           >
-            <svg className="door-icon" viewBox="0 0 20 20" fill="none" stroke="var(--door-aiqa)" strokeWidth="2">
-              <path d="M10 2.5l1.8 4.8 4.8 1.8-4.8 1.8L10 15.7l-1.8-4.8-4.8-1.8 4.8-1.8z"/>
-            </svg>
+            <GaugeIcon className="door-icon" color="var(--door-aiqa)" />
             <span className="name">Mindframe Multi-Provider Benchmark &amp; Router</span>
             <div className="data-row-tags">
               <span className="door">QUALITY CHECKS</span>
@@ -266,10 +239,7 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
             style={{ borderLeftColor: 'var(--line)' }}
             onClick={() => onSelectDoc('05-real-world/README.md')}
           >
-            <svg className="door-icon" viewBox="0 0 20 20" fill="none" stroke="var(--ink-soft)" strokeWidth="2">
-              <rect x="4.5" y="9" width="11" height="7.5" rx="1.5"/>
-              <path d="M7 9V6.5a3 3 0 0 1 6 0V9"/>
-            </svg>
+            <GlobeIcon className="door-icon" color="var(--ink-soft)" />
             <span className="name">Real-World Experience Field Placement</span>
             <div className="data-row-tags">
               <span className="door">FIELD WORK</span>
