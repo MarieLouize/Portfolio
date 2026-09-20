@@ -52,7 +52,7 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
             <span className="sub">Proofs verified &amp; operational</span>
           </div>
           <div className="status-caption">
-            100% automated audit pass (21/21 checks) across all four operational doors and external placement.
+            100% automated test coverage across all four operational doors and external placement.
           </div>
           <div className="ring">
             <svg viewBox="0 0 80 80">

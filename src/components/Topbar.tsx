@@ -3,7 +3,7 @@ import React from 'react';
 interface TopbarProps {
   currentPath: string;
   onSelectDoc: (path: string) => void;
-  onOpenAudit: () => void;
+  onNavigateContact: () => void;
   isDark: boolean;
   onToggleTheme: () => void;
   onToggleSidebar: () => void;
@@ -12,7 +12,7 @@ interface TopbarProps {
 export const Topbar: React.FC<TopbarProps> = ({
   currentPath,
   onSelectDoc,
-  onOpenAudit,
+  onNavigateContact,
   isDark,
   onToggleTheme,
   onToggleSidebar
@@ -41,13 +41,17 @@ export const Topbar: React.FC<TopbarProps> = ({
       <span className="crumb">~/workos/{currentPath}</span>
 
       <div className="topbar-links">
-        <button 
+        <a 
           className="cta-btn" 
-          onClick={onOpenAudit}
-          title="Run 21-point automated compliance audit"
+          href="#contact"
+          onClick={(e) => {
+            e.preventDefault();
+            onNavigateContact();
+          }}
+          title="Contact Marie-Louize"
         >
-          Audit (21/21)
-        </button>
+          Contact
+        </a>
 
         <a 
           className="icon-link" 

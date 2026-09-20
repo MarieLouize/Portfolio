@@ -5,6 +5,7 @@ interface TreeExplorerProps {
   docs: DocItem[];
   selectedDoc: DocItem;
   onSelectDoc: (path: string) => void;
+  onNavigateContact?: () => void;
   isOpen: boolean;
   onCloseSidebar: () => void;
 }
@@ -12,6 +13,7 @@ interface TreeExplorerProps {
 export const TreeExplorer: React.FC<TreeExplorerProps> = ({
   selectedDoc,
   onSelectDoc,
+  onNavigateContact,
   isOpen,
   onCloseSidebar
 }) => {
@@ -151,6 +153,17 @@ export const TreeExplorer: React.FC<TreeExplorerProps> = ({
         >
           readme.md
         </div>
+        {onNavigateContact && (
+          <div 
+            className="tree-file"
+            onClick={() => {
+              onNavigateContact();
+              onCloseSidebar();
+            }}
+          >
+            contact.md
+          </div>
+        )}
       </nav>
 
       {/* Scrim overlay for mobile navigation drawer */}

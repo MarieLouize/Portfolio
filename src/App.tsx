@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { DocItem, AuditReport } from './types/portfolio';
-import { fetchDocsCatalog, fetchDoc, fetchAuditReport } from './api/client';
+import { DocItem } from './types/portfolio';
+import { fetchDocsCatalog, fetchDoc } from './api/client';
 import { Topbar } from './components/Topbar';
 import { TreeExplorer } from './components/TreeExplorer';
 import { DocumentViewer } from './components/DocumentViewer';
 import { ProfileHome } from './components/ProfileHome';
-import { AuditModal } from './components/AuditModal';
 import './styles/design-tokens.css';
 
 export const App: React.FC = () => {
@@ -17,11 +16,6 @@ export const App: React.FC = () => {
 
   // Mobile drawer state
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
-
-  // Audit Suite State
-  const [isAuditOpen, setIsAuditOpen] = useState<boolean>(false);
-  const [auditReport, setAuditReport] = useState<AuditReport | null>(null);
-  const [auditLoading, setAuditLoading] = useState<boolean>(false);
 
   // Theme State
   const [isDark, setIsDark] = useState<boolean>(false);
@@ -74,23 +68,14 @@ export const App: React.FC = () => {
     }
   };
 
-  const handleOpenAudit = async () => {
-    setIsAuditOpen(true);
-    if (!auditReport) {
-      await runAuditCheck();
+  const handleNavigateContact = async () => {
+    if (selectedDoc?.path !== 'profile.md') {
+      await loadDocument('profile.md');
     }
-  };
-
-  const runAuditCheck = async () => {
-    try {
-      setAuditLoading(true);
-      const rep = await fetchAuditReport();
-      setAuditReport(rep);
-    } catch (err) {
-      console.error('Failed to run audit:', err);
-    } finally {
-      setAuditLoading(false);
-    }
+    setTimeout(() => {
+      const el = document.getElementById('contact');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
   };
 
   // Pager helpers
@@ -140,7 +125,7 @@ export const App: React.FC = () => {
       <Topbar 
         currentPath={selectedDoc ? selectedDoc.path : 'profile.md'}
         onSelectDoc={(p) => loadDocument(p)}
-        onOpenAudit={handleOpenAudit}
+        onNavigateContact={handleNavigateContact}
         isDark={isDark}
         onToggleTheme={toggleTheme}
         onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -153,6 +138,7 @@ export const App: React.FC = () => {
             docs={docs}
             selectedDoc={selectedDoc}
             onSelectDoc={(p) => loadDocument(p)}
+            onNavigateContact={handleNavigateContact}
             isOpen={isSidebarOpen}
             onCloseSidebar={() => setIsSidebarOpen(false)}
           />
@@ -172,16 +158,6 @@ export const App: React.FC = () => {
           />
         ) : null}
       </div>
-
-      {/* Audit Modal */}
-      {isAuditOpen && (
-        <AuditModal 
-          report={auditReport}
-          loading={auditLoading}
-          onClose={() => setIsAuditOpen(false)}
-          onRerun={runAuditCheck}
-        />
-      )}
     </>
   );
 };
