@@ -2,13 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { DocItem, AuditReport } from './types/portfolio';
 import { fetchDocsCatalog, fetchDoc, fetchAuditReport } from './api/client';
 import { Topbar } from './components/Topbar';
-import { FastTrackBar } from './components/FastTrackBar';
 import { TreeExplorer } from './components/TreeExplorer';
 import { DocumentViewer } from './components/DocumentViewer';
 import { ProfileHome } from './components/ProfileHome';
 import { AuditModal } from './components/AuditModal';
 import './styles/design-tokens.css';
-import './styles/home.css';
 
 export const App: React.FC = () => {
   const [docs, setDocs] = useState<DocItem[]>([]);
@@ -16,6 +14,9 @@ export const App: React.FC = () => {
   const [markdown, setMarkdown] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+
+  // Mobile drawer state
+  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
 
   // Audit Suite State
   const [isAuditOpen, setIsAuditOpen] = useState<boolean>(false);
@@ -62,6 +63,9 @@ export const App: React.FC = () => {
     setSelectedDoc(target);
     window.location.hash = target.path;
 
+    // Scroll to top when changing document
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
     try {
       const payload = await fetchDoc(target.path);
       setMarkdown(payload.markdown);
@@ -96,20 +100,34 @@ export const App: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="app-shell" style={{ alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ textAlign: 'center' }}>
-          <span className="dot dot--pulse"></span>
-          <p style={{ marginTop: '12px', fontFamily: 'var(--font-mono)' }}>Initializing Evidence Vault...</p>
-        </div>
+      <div style={{ 
+        minHeight: '100vh', 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        background: 'var(--bg)',
+        fontFamily: 'var(--font-pixel)',
+        fontSize: '24px',
+        color: 'var(--ink)'
+      }}>
+        <div>INITIALIZING WORKOS EVIDENCE VAULT...</div>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="app-shell" style={{ alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ color: 'var(--danger)', textAlign: 'center' }}>
-          <h2>Connection Error</h2>
+      <div style={{ 
+        minHeight: '100vh', 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        background: 'var(--bg)',
+        fontFamily: 'var(--font-pixel)',
+        color: 'var(--rosewood)'
+      }}>
+        <div style={{ textAlign: 'center' }}>
+          <h2>SYSTEM CONNECTION ERROR</h2>
           <p>{error}</p>
         </div>
       </div>
@@ -117,42 +135,43 @@ export const App: React.FC = () => {
   }
 
   return (
-    <div className="app-shell">
-      {/* Topbar with Brand & Actions */}
+    <>
+      {/* Topbar matching design.html */}
       <Topbar 
+        currentPath={selectedDoc ? selectedDoc.path : 'profile.md'}
         onSelectDoc={(p) => loadDocument(p)}
         onOpenAudit={handleOpenAudit}
         isDark={isDark}
         onToggleTheme={toggleTheme}
+        onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
       />
 
-      {/* 3-Minute Fast Track Callout */}
-      <FastTrackBar onSelectDoc={(p) => loadDocument(p)} />
-
-      {/* OS-Inspired 2-Pane Tree Explorer Shell */}
-      {selectedDoc && (
-        <div className="tree-shell">
+      {/* Main Shell Layout */}
+      <div className="shell">
+        {selectedDoc && (
           <TreeExplorer 
             docs={docs}
             selectedDoc={selectedDoc}
             onSelectDoc={(p) => loadDocument(p)}
+            isOpen={isSidebarOpen}
+            onCloseSidebar={() => setIsSidebarOpen(false)}
           />
+        )}
 
-          {selectedDoc.path === 'profile.md' ? (
-            <ProfileHome onSelectDoc={(p) => loadDocument(p)} />
-          ) : (
-            <DocumentViewer 
-              doc={selectedDoc}
-              markdown={markdown}
-              onSelectDoc={(p) => loadDocument(p)}
-              onPrevDoc={prevDoc ? () => loadDocument(prevDoc.path) : undefined}
-              onNextDoc={nextDoc ? () => loadDocument(nextDoc.path) : undefined}
-              prevTitle={prevDoc?.title}
-              nextTitle={nextDoc?.title}
-            />
-          )}
-        </div>
-      )}
+        {selectedDoc && selectedDoc.path === 'profile.md' ? (
+          <ProfileHome onSelectDoc={(p) => loadDocument(p)} />
+        ) : selectedDoc ? (
+          <DocumentViewer 
+            doc={selectedDoc}
+            markdown={markdown}
+            onSelectDoc={(p) => loadDocument(p)}
+            onPrevDoc={prevDoc ? () => loadDocument(prevDoc.path) : undefined}
+            onNextDoc={nextDoc ? () => loadDocument(nextDoc.path) : undefined}
+            prevTitle={prevDoc?.title}
+            nextTitle={nextDoc?.title}
+          />
+        ) : null}
+      </div>
 
       {/* Audit Modal */}
       {isAuditOpen && (
@@ -163,6 +182,6 @@ export const App: React.FC = () => {
           onRerun={runAuditCheck}
         />
       )}
-    </div>
+    </>
   );
 };

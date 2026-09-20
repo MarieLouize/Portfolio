@@ -204,123 +204,137 @@ export const DocumentViewer: React.FC<DocumentViewerProps> = ({
   };
 
   const getBadgeClass = (pClass: string) => {
-    if (pClass.includes('REAL')) return 'badge--real';
-    if (pClass.includes('SIMULATION')) return 'badge--sim';
-    if (pClass.includes('SELF-DIRECTED')) return 'badge--self';
-    if (pClass.includes('OPEN')) return 'badge--open';
-    return '';
+    if (pClass.includes('REAL')) return 'real';
+    if (pClass.includes('SIMULATION')) return 'sim';
+    if (pClass.includes('SELF-DIRECTED')) return 'self';
+    return 'tbd';
   };
 
   return (
-    <div className="tree-preview">
-      {/* Breadcrumb path */}
-      <div className="tree-preview-header">
-        <div className="tree-preview-path">
-          <span>vault</span>
-          <span className="sep">/</span>
-          <span>{doc.doorId}</span>
-          <span className="sep">/</span>
-          <span className="current">{doc.path}</span>
-        </div>
-
-        <div style={{ display: 'flex', gap: '8px' }}>
-          <button className="btn btn--sm" onClick={copyMarkdown}>📋 Copy .md</button>
-          <button className="btn btn--sm" onClick={() => setIsRaw(!isRaw)}>
-            {isRaw ? '📖 Rendered' : '👁️ Raw Markdown'}
+    <main className="main">
+      <div className="doc-window">
+        <div className="doc-window-bar">
+          <span>~/workos/{doc.path}</span>
+          <button 
+            className="close" 
+            onClick={() => onSelectDoc('profile.md')} 
+            title="Return to Profile"
+          >
+            &times;
           </button>
         </div>
-      </div>
 
-      {/* Proof Hero Card */}
-      <div className="proof-hero-card">
-        <div className="hero-top-meta">
-          <div className="hero-badges-strip">
-            <span className="proof-id-badge">{doc.proofId}</span>
-            <span className={`badge ${getBadgeClass(doc.proofClass)}`}>{doc.proofClass}</span>
-            <span className="badge" style={{ background: 'var(--panel)', borderColor: 'var(--line-soft)' }}>
-              {doc.door}
-            </span>
+        {/* Proof Hero Card */}
+        <div className="doc-header-card">
+          <div className="doc-header-meta">
+            <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
+              <span className="class-tag real">{doc.proofId}</span>
+              <span className={`class-tag ${getBadgeClass(doc.proofClass)}`}>{doc.proofClass}</span>
+              <span className="class-tag">{doc.door}</span>
+              {doc.fastTrack && (
+                <span className="class-tag" style={{ background: 'var(--rosewood)', color: 'white' }}>
+                  ★ 3-Min Fast Track
+                </span>
+              )}
+            </div>
+
+            <div style={{ display: 'flex', gap: '8px' }}>
+              <button 
+                className="cta-btn" 
+                style={{ padding: '4px 12px', fontSize: '15px' }} 
+                onClick={copyMarkdown}
+                title="Copy raw Markdown"
+              >
+                Copy .md
+              </button>
+              <button 
+                className="cta-btn" 
+                style={{ 
+                  padding: '4px 12px', 
+                  fontSize: '15px', 
+                  background: isRaw ? 'var(--midnight-lagoon)' : 'var(--sage-leaf)',
+                  color: isRaw ? 'var(--vanilla-cream)' : 'var(--midnight-lagoon)'
+                }} 
+                onClick={() => setIsRaw(!isRaw)}
+              >
+                {isRaw ? 'Rendered' : 'Raw .md'}
+              </button>
+            </div>
           </div>
 
-          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--ink-soft)' }}>
-            Door #{doc.doorNumber} • {doc.fastTrack ? '⚡ 3-Min Fast Track' : 'Standard Case Study'}
+          <div className="doc-hero-title">{doc.title}</div>
+          <div className="doc-hero-summary">{doc.summary}</div>
+
+          <div className="doc-meta-grid">
+            <div className="doc-meta-item">
+              <div className="k">Target Door</div>
+              <div className="v">{doc.door}</div>
+            </div>
+            <div className="doc-meta-item">
+              <div className="k">Proof Classification</div>
+              <div className="v">{doc.proofClass}</div>
+            </div>
+            <div className="doc-meta-item">
+              <div className="k">Audit Standard</div>
+              <div className="v">Claim → Proof Standard</div>
+            </div>
+            <div className="doc-meta-item">
+              <div className="k">Verification Status</div>
+              <div className="v" style={{ color: 'var(--sage-leaf)' }}>Active on Disk</div>
+            </div>
           </div>
         </div>
 
-        {doc.fastTrack && (
-          <div className="fast-track-callout">
-            <span>⚡</span>
-            <span>
-              <strong>3-Minute Flagship Proof:</strong> Recommended primary evaluation piece for technical operating depth and root-cause systems diagnosis.
-            </span>
-          </div>
+        {/* Content Canvas */}
+        {isRaw ? (
+          <pre style={{
+            background: 'var(--surface)',
+            padding: '24px',
+            whiteSpace: 'pre-wrap',
+            fontFamily: 'var(--font-mono)',
+            fontSize: '13px',
+            lineHeight: '1.6'
+          }}>
+            {markdown}
+          </pre>
+        ) : (
+          <div 
+            ref={articleRef}
+            className="markdown-article"
+            dangerouslySetInnerHTML={{ __html: getRenderedHtml() }}
+          />
         )}
 
-        <div className="hero-title">{doc.title}</div>
-        <div className="hero-summary">{doc.summary}</div>
+        {/* Prev / Next Pagination */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '16px',
+          padding: '20px 30px',
+          borderTop: 'var(--border-thick)',
+          background: 'var(--vanilla-cream)'
+        }}>
+          {onPrevDoc && prevTitle ? (
+            <button 
+              className="cta-btn" 
+              style={{ textAlign: 'left', overflow: 'hidden', textOverflow: 'ellipsis' }} 
+              onClick={onPrevDoc}
+            >
+              ← Prev: {prevTitle}
+            </button>
+          ) : <div />}
 
-        <div className="hero-meta-grid">
-          <div className="meta-item">
-            <div className="k">Target Door</div>
-            <div className="v">{doc.door}</div>
-          </div>
-          <div className="meta-item">
-            <div className="k">Proof Classification</div>
-            <div className="v">{doc.proofClass}</div>
-          </div>
-          <div className="meta-item">
-            <div className="k">Audit Standard</div>
-            <div className="v">Claim → Proof Standard</div>
-          </div>
-          <div className="meta-item">
-            <div className="k">Verification Status</div>
-            <div className="v" style={{ color: 'var(--success)' }}>Active on Disk</div>
-          </div>
+          {onNextDoc && nextTitle ? (
+            <button 
+              className="cta-btn" 
+              style={{ textAlign: 'right', overflow: 'hidden', textOverflow: 'ellipsis', background: 'var(--midnight-lagoon)' }} 
+              onClick={onNextDoc}
+            >
+              Next: {nextTitle} →
+            </button>
+          ) : <div />}
         </div>
       </div>
-
-      {/* Content Canvas */}
-      {isRaw ? (
-        <pre style={{
-          background: 'var(--surface)',
-          padding: '24px',
-          borderRadius: 'var(--radius-md)',
-          border: '1.5px solid var(--line)',
-          whiteSpace: 'pre-wrap',
-          fontFamily: 'var(--font-mono)',
-          fontSize: '13px'
-        }}>
-          {markdown}
-        </pre>
-      ) : (
-        <div 
-          ref={articleRef}
-          className="markdown-article"
-          dangerouslySetInnerHTML={{ __html: getRenderedHtml() }}
-        />
-      )}
-
-      {/* Prev / Next Pagination */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: '16px',
-        marginTop: '24px',
-        paddingTop: '20px',
-        borderTop: '1.5px dashed var(--line-soft)'
-      }}>
-        {onPrevDoc && prevTitle ? (
-          <button className="btn" style={{ justifyContent: 'flex-start' }} onClick={onPrevDoc}>
-            ← Prev: {prevTitle}
-          </button>
-        ) : <div />}
-
-        {onNextDoc && nextTitle ? (
-          <button className="btn btn--primary" style={{ justifyContent: 'flex-end' }} onClick={onNextDoc}>
-            Next: {nextTitle} →
-          </button>
-        ) : <div />}
-      </div>
-    </div>
+    </main>
   );
 };

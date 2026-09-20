@@ -1,152 +1,164 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { DocItem } from '../types/portfolio';
 
 interface TreeExplorerProps {
   docs: DocItem[];
   selectedDoc: DocItem;
   onSelectDoc: (path: string) => void;
+  isOpen: boolean;
+  onCloseSidebar: () => void;
 }
 
 export const TreeExplorer: React.FC<TreeExplorerProps> = ({
-  docs,
   selectedDoc,
-  onSelectDoc
+  onSelectDoc,
+  isOpen,
+  onCloseSidebar
 }) => {
-  const [search, setSearch] = useState('');
-  const [filter, setFilter] = useState<'ALL' | 'FAST' | 'REAL' | 'SIM' | 'SELF'>('ALL');
-  const [collapsedGroups, setCollapsedGroups] = useState<Record<string, boolean>>({});
+  const isPathActive = (p: string) => selectedDoc.path === p;
 
-  const toggleGroup = (doorName: string) => {
-    setCollapsedGroups(prev => ({ ...prev, [doorName]: !prev[doorName] }));
-  };
-
-  // Filter docs
-  const filteredDocs = docs.filter(d => {
-    // Search match
-    if (search.trim()) {
-      const q = search.toLowerCase();
-      const match = d.title.toLowerCase().includes(q) ||
-                    d.summary.toLowerCase().includes(q) ||
-                    d.proofId.toLowerCase().includes(q) ||
-                    d.door.toLowerCase().includes(q);
-      if (!match) return false;
-    }
-
-    if (filter === 'FAST') return d.fastTrack;
-    if (filter === 'REAL') return d.proofClass.includes('REAL');
-    if (filter === 'SIM') return d.proofClass.includes('SIMULATION');
-    if (filter === 'SELF') return d.proofClass.includes('SELF-DIRECTED');
-    return true;
-  });
-
-  // Group by door
-  const groups: Record<string, DocItem[]> = {};
-  filteredDocs.forEach(d => {
-    if (!groups[d.door]) groups[d.door] = [];
-    groups[d.door].push(d);
-  });
-
-  const getBadgeClass = (pClass: string) => {
-    if (pClass.includes('REAL')) return 'badge--real';
-    if (pClass.includes('SIMULATION')) return 'badge--sim';
-    if (pClass.includes('SELF-DIRECTED')) return 'badge--self';
-    if (pClass.includes('OPEN')) return 'badge--open';
-    return '';
+  const handleSelect = (p: string) => {
+    onSelectDoc(p);
+    onCloseSidebar();
   };
 
   return (
-    <aside className="tree-sidebar">
-      {/* Sidebar Header */}
-      <div className="tree-sidebar-header">
-        <span>EXPLORER / EVIDENCE VAULT</span>
-        <span className="count-pill">{filteredDocs.length} DOCS</span>
-      </div>
+    <>
+      <nav className={`sidebar ${isOpen ? 'open' : ''}`} id="sidebar">
+        <div className="sidebar-root">~/workos</div>
 
-      {/* Search Input */}
-      <div style={{ padding: '0 4px' }}>
-        <input 
-          type="text" 
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Filter proofs, tools, keywords..."
-          style={{
-            width: '100%',
-            padding: '6px 10px',
-            border: '1.5px solid var(--line-soft)',
-            borderRadius: 'var(--radius-xs)',
-            background: 'var(--surface)',
-            color: 'var(--ink)',
-            fontFamily: 'var(--font-display)',
-            fontSize: '12px',
-            outline: 'none'
-          }}
-        />
-      </div>
+        {/* Profile / Home */}
+        <div 
+          className={`tree-file ${isPathActive('profile.md') ? 'active' : ''}`}
+          onClick={() => handleSelect('profile.md')}
+        >
+          <span className="dot-marker"></span>profile.md
+        </div>
 
-      {/* Filter Tabs */}
-      <div style={{ display: 'flex', gap: '4px', overflowX: 'auto', padding: '4px 0' }}>
-        <button 
-          className={`btn btn--sm ${filter === 'ALL' ? 'btn--primary' : 'btn--ghost'}`}
-          onClick={() => setFilter('ALL')}
-        >
-          All
-        </button>
-        <button 
-          className={`btn btn--sm ${filter === 'FAST' ? 'btn--primary' : 'btn--ghost'}`}
-          onClick={() => setFilter('FAST')}
-        >
-          ⚡ Fast Track
-        </button>
-        <button 
-          className={`btn btn--sm ${filter === 'REAL' ? 'btn--primary' : 'btn--ghost'}`}
-          onClick={() => setFilter('REAL')}
-        >
-          Real
-        </button>
-        <button 
-          className={`btn btn--sm ${filter === 'SIM' ? 'btn--primary' : 'btn--ghost'}`}
-          onClick={() => setFilter('SIM')}
-        >
-          Sim
-        </button>
-      </div>
+        <div className="tree-divider"></div>
 
-      {/* Grouped Tree Nodes */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '6px' }}>
-        {Object.entries(groups).map(([doorName, items]) => {
-          const isCollapsed = collapsedGroups[doorName];
-          return (
-            <div key={doorName} className="tree-node-group">
-              <div className="tree-group-title" onClick={() => toggleGroup(doorName)}>
-                <span>{doorName}</span>
-                <span>{isCollapsed ? '+' : '−'}</span>
-              </div>
+        {/* Door 1: Support & Tech Ops */}
+        <div className="door-support">
+          <div className="tree-folder-label">
+            <span className="mini-folder"></span>01-support-technical-ops/
+          </div>
+          <div 
+            className={`tree-child ${isPathActive('01-support-technical-ops/queue/README.md') ? 'active' : ''}`}
+            onClick={() => handleSelect('01-support-technical-ops/queue/README.md')}
+          >
+            <span>queue.md</span>
+          </div>
+          <div 
+            className={`tree-child ${isPathActive('01-support-technical-ops/pipeline-diagnosis/README.md') ? 'active' : ''}`}
+            onClick={() => handleSelect('01-support-technical-ops/pipeline-diagnosis/README.md')}
+          >
+            <span>pipeline-diagnosis.md</span>
+            <span style={{ color: 'var(--rosewood)', fontWeight: 'bold', fontSize: '13px' }}>★</span>
+          </div>
+          <div 
+            className={`tree-child ${isPathActive('01-support-technical-ops/incident-investigation/README.md') ? 'active' : ''}`}
+            onClick={() => handleSelect('01-support-technical-ops/incident-investigation/README.md')}
+          >
+            <span>incident-investigation.md</span>
+          </div>
+        </div>
 
-              {!isCollapsed && (
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', paddingLeft: '6px' }}>
-                  {items.map(item => {
-                    const isActive = selectedDoc.path === item.path;
-                    return (
-                      <div 
-                        key={item.path}
-                        className={`tree-node ${isActive ? 'is-active' : ''}`}
-                        onClick={() => onSelectDoc(item.path)}
-                      >
-                        <span className="tree-node-icon">📄</span>
-                        <span className="tree-node-title" title={item.title}>{item.title}</span>
-                        {item.fastTrack && <span style={{ color: '#10b981', fontSize: '10px' }}>⚡</span>}
-                        <span className={`badge ${getBadgeClass(item.proofClass)}`} style={{ fontSize: '8px', padding: '1px 4px' }}>
-                          {item.proofClass.split(' ')[0]}
-                        </span>
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
-    </aside>
+        {/* Door 2: Customer Success */}
+        <div 
+          className={`tree-folder-flat door-cs ${isPathActive('02-customer-success/README.md') ? 'active' : ''}`}
+          onClick={() => handleSelect('02-customer-success/README.md')}
+        >
+          <span className="mini-folder"></span>02-customer-success.md
+        </div>
+
+        {/* Door 3: Documentation & Knowledge Ops */}
+        <div className="door-docs">
+          <div className="tree-folder-label">
+            <span className="mini-folder"></span>03-documentation-knowledge-ops/
+          </div>
+          <div 
+            className={`tree-child ${isPathActive('03-documentation-knowledge-ops/customize-store-kb/README.md') ? 'active' : ''}`}
+            onClick={() => handleSelect('03-documentation-knowledge-ops/customize-store-kb/README.md')}
+          >
+            <span>customize-store-kb.md</span>
+          </div>
+          <div 
+            className={`tree-child ${isPathActive('03-documentation-knowledge-ops/mindframe-docs/README.md') ? 'active' : ''}`}
+            onClick={() => handleSelect('03-documentation-knowledge-ops/mindframe-docs/README.md')}
+          >
+            <span>mindframe-docs.md</span>
+          </div>
+        </div>
+
+        {/* Door 4: AI Ops / Output QA */}
+        <div className="door-aiqa">
+          <div className="tree-folder-label">
+            <span className="mini-folder"></span>04-ai-ops-qa/
+          </div>
+          <div 
+            className={`tree-child ${isPathActive('04-ai-ops-qa/eval-framework/README.md') ? 'active' : ''}`}
+            onClick={() => handleSelect('04-ai-ops-qa/eval-framework/README.md')}
+          >
+            <span>eval-framework.md</span>
+            <span style={{ color: 'var(--sage-leaf)', fontWeight: 'bold', fontSize: '13px' }}>★</span>
+          </div>
+          <div 
+            className={`tree-child ${isPathActive('04-ai-ops-qa/model-benchmark/README.md') ? 'active' : ''}`}
+            onClick={() => handleSelect('04-ai-ops-qa/model-benchmark/README.md')}
+          >
+            <span>model-benchmark.md</span>
+          </div>
+        </div>
+
+        {/* Door 5: Real-World Experience Placement */}
+        <div 
+          className={`tree-folder-flat ${isPathActive('05-real-world/README.md') ? 'active' : ''}`}
+          onClick={() => handleSelect('05-real-world/README.md')}
+        >
+          <span className="mini-folder"></span>05-real-world/ <span className="lock-tag">verified</span>
+        </div>
+
+        <div className="tree-divider"></div>
+
+        {/* Standards & Protocols */}
+        <div 
+          className={`tree-file ${isPathActive('ticket-template.md') ? 'active' : ''}`}
+          onClick={() => handleSelect('ticket-template.md')}
+        >
+          ticket-template.md
+        </div>
+        <div 
+          className={`tree-file ${isPathActive('VOICE_AND_LEXICAL_STANDARD.md') ? 'active' : ''}`}
+          onClick={() => handleSelect('VOICE_AND_LEXICAL_STANDARD.md')}
+        >
+          voice-standard.md
+        </div>
+        <div 
+          className={`tree-file ${isPathActive('OPERATIONAL_PSYCHOLOGY_PLAYBOOK.md') ? 'active' : ''}`}
+          onClick={() => handleSelect('OPERATIONAL_PSYCHOLOGY_PLAYBOOK.md')}
+        >
+          playbook.md
+        </div>
+        <div 
+          className={`tree-file ${isPathActive('MARKET_SKILL_MATRIX.md') ? 'active' : ''}`}
+          onClick={() => handleSelect('MARKET_SKILL_MATRIX.md')}
+        >
+          market-matrix.md
+        </div>
+        <div 
+          className={`tree-file ${isPathActive('README.md') ? 'active' : ''}`}
+          onClick={() => handleSelect('README.md')}
+        >
+          readme.md
+        </div>
+      </nav>
+
+      {/* Scrim overlay for mobile navigation drawer */}
+      <div 
+        className={`sidebar-scrim ${isOpen ? 'show' : ''}`} 
+        id="scrim" 
+        onClick={onCloseSidebar}
+      />
+    </>
   );
 };
