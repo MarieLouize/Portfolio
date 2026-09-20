@@ -1,8 +1,8 @@
-# Door 3: Documentation & Knowledge Operations
+# Clear Guides & Runbooks
 
 > **"If knowledge isn't indexed, searchable, and tested against reality, it doesn't exist operationally."**
 
-This section contains operational proof for **Technical Documentation, Knowledge Architecture, and Developer / Operator Onboarding**. It demonstrates the ability to translate complex multi-service architectures and high-friction customer journeys into structured, self-service documentation that reduces support ticket load and engineering interrupt rates.
+This section contains operational proof for **Technical Documentation, Knowledge Architecture, and Operator Onboarding**. It demonstrates how to turn complex systems and customer friction points into clear, step-by-step documentation that helps users resolve issues on their own and keeps engineering focused.
 
 ---
 

@@ -1,8 +1,8 @@
-# Door 4: AI Operations & Output QA
+# Automated Quality Checks
 
 > **"A probabilistic system without deterministic quality gates is a production liability."**
 
-This section contains operational proof for **AI Output Quality Assurance, Evaluation Rubric Engineering, Model Benchmarking, and Cost/Latency Optimization**. It demonstrates how to bring rigorous engineering discipline, statistical guardrails, and systematic benchmarking to generative AI pipelines.
+This section contains operational proof for **Automated Quality Checks, Evaluation Rubrics, Model Benchmarking, and Cost/Speed Optimization**. It demonstrates how to bring rigorous testing, measurable standards, and systematic checks to AI-generated output so broken responses never make it to users.
 
 ---
 

@@ -2,7 +2,7 @@
 
 **Proof Class:** REAL EXPERIENCE  
 **Capability:** System Architecture Documentation, Test-Suite Runbook Authoring, Developer / Operator Onboarding  
-**Job Door:** Documentation & Knowledge Operations  
+**Operational Stage:** Clear Guides & Runbooks  
 **Proof ID:** WOS-DOC-006  
 
 ---

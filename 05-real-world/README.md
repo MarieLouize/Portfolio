@@ -1,7 +1,7 @@
-# Door 5 / Proof 9 — Real-World Experience Placement
+# Field Work — Real-World Experience Placement
 
 **Proof Class:** OPEN (Placement / Client Engagement in Progress)  
-**Job Door:** Cross-Cutting / External Client & Community Engagement  
+**Operational Stage:** Field Work (Direct Placement)  
 **Proof ID:** WOS-EXT-009  
 
 ---
@@ -10,7 +10,7 @@
 
 Unlike simulated or self-directed projects, **Proof 9** is reserved exclusively for a verified external placement: a freelance technical operations contract, external documentation engagement, customer success project, or substantial open-source system contribution.
 
-Until an engagement is completed, this document functions as the **Active Outreach & Pipeline Tracker**. Once concluded, this folder will convert into a full Proof Record Standard writeup within its corresponding operational door.
+Until an engagement is completed, this document functions as the **Active Outreach & Pipeline Tracker**. Once concluded, this folder will convert into a full Proof Record Standard writeup within its corresponding operational module.
 
 ---
 
@@ -36,7 +36,7 @@ Upon engagement conclusion, the case study will be authored following this exact
 
 **Proof Class:** REAL EXPERIENCE  
 **Capability:** [e.g., Cross-Border Customer Operations / API Documentation / QA Architecture]  
-**Job Door:** [Support & Ops / Customer Success / Documentation / AI Ops]  
+**Operational Stage:** [Troubleshooting / User Support / Guides & Runbooks / Quality Checks]  
 **Proof ID:** WOS-EXT-009  
 
 ### 1. Problem & Context

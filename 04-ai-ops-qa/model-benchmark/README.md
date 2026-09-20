@@ -2,7 +2,7 @@
 
 **Proof Class:** REAL EXPERIENCE  
 **Capability:** Model Evaluation & Benchmarking, Multi-Provider LLM Architecture, Cost/Latency Optimization, Hybrid Model Routing  
-**Job Door:** AI Operations & Output QA  
+**Operational Stage:** Automated Quality Checks  
 **Proof ID:** WOS-AI-008  
 
 ---

@@ -6,7 +6,7 @@
 
 **Proof ID:** WOS-SUP-002  
 **Capability:** Technical investigation, root-cause diagnosis, system redesign  
-**Job Door:** Support & Technical Operations (Diagnose)  
+**Operational Stage:** Troubleshooting & Fixes  
 **Proof Class:** REAL EXPERIENCE  
 
 ## Problem

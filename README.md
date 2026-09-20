@@ -17,24 +17,24 @@ If you are a hiring manager or engineering lead evaluating technical operating d
 
 ---
 
-## The 4 Employment Doors & 9 Proofs
+## The Operational Lifecycle & 9 Proofs
 
 Every proof in this repository carries an honest proof-class badge:
 - **REAL EXPERIENCE:** Work performed for real users, products, or cohorts.
 - **SELF-DIRECTED:** Work deliberately built to demonstrate a production standard.
 - **SIMULATION:** Realistic staged scenarios with explicit conversion triggers.
 
-| # | Door | Proof Title | Proof Class | Location |
+| # | Operational Stage | Proof Title | Proof Class | Location |
 | :---: | :--- | :--- | :---: | :--- |
-| **1** | Support & Technical Ops | **Support Queue** (AcePadi + Trovéa) | `REAL` + `SIMULATION` | [`01-support-technical-ops/queue/`](./01-support-technical-ops/queue/) |
-| **2** | Support & Technical Ops | **Pipeline Root-Cause Fix** (AcePadi) | `REAL EXPERIENCE` | [`01-support-technical-ops/pipeline-diagnosis/`](./01-support-technical-ops/pipeline-diagnosis/) |
-| **3** | Support & Technical Ops | **Broken Integration Investigation** (Trovéa) | `SIMULATION` | [`01-support-technical-ops/incident-investigation/`](./01-support-technical-ops/incident-investigation/) |
-| **4** | Customer Success & Ops | **Beta Customer Success Program** (AcePadi) | `REAL EXPERIENCE` | [`02-customer-success/`](./02-customer-success/) |
-| **5** | Documentation & Knowledge | **Customize Store Knowledge Base** (Trovéa) | `SELF-DIRECTED` | [`03-documentation-knowledge-ops/customize-store-kb/`](./03-documentation-knowledge-ops/customize-store-kb/) |
-| **6** | Documentation & Knowledge | **Mindframe Technical Documentation** | `REAL EXPERIENCE` | [`03-documentation-knowledge-ops/mindframe-docs/`](./03-documentation-knowledge-ops/mindframe-docs/) |
-| **7** | AI Operations & Output QA | **Quality-Gate Evaluation Framework** (AcePadi) | `REAL EXPERIENCE` | [`04-ai-ops-qa/eval-framework/`](./04-ai-ops-qa/eval-framework/) |
-| **8** | AI Operations & Output QA | **Multi-Provider Benchmark** (Mindframe) | `REAL EXPERIENCE` | [`04-ai-ops-qa/model-benchmark/`](./04-ai-ops-qa/model-benchmark/) |
-| **9** | External Real-World | **Real-World Placement / Case Study** | `OPEN` | [`05-real-world/`](./05-real-world/) |
+| **1** | Troubleshooting & Fixes | **Support Queue** (AcePadi + Trovéa) | `REAL` + `SIMULATION` | [`01-support-technical-ops/queue/`](./01-support-technical-ops/queue/) |
+| **2** | Troubleshooting & Fixes | **Pipeline Root-Cause Fix** (AcePadi) | `REAL EXPERIENCE` | [`01-support-technical-ops/pipeline-diagnosis/`](./01-support-technical-ops/pipeline-diagnosis/) |
+| **3** | Troubleshooting & Fixes | **Broken Integration Investigation** (Trovéa) | `SIMULATION` | [`01-support-technical-ops/incident-investigation/`](./01-support-technical-ops/incident-investigation/) |
+| **4** | User Onboarding & Support | **Beta Customer Success Program** (AcePadi) | `REAL EXPERIENCE` | [`02-customer-success/`](./02-customer-success/) |
+| **5** | Clear Guides & Runbooks | **Customize Store Step-by-Step Guide** (Trovéa) | `SELF-DIRECTED` | [`03-documentation-knowledge-ops/customize-store-kb/`](./03-documentation-knowledge-ops/customize-store-kb/) |
+| **6** | Clear Guides & Runbooks | **Mindframe Technical Documentation** | `REAL EXPERIENCE` | [`03-documentation-knowledge-ops/mindframe-docs/`](./03-documentation-knowledge-ops/mindframe-docs/) |
+| **7** | Automated Quality Checks | **Quality-Gate Evaluation Framework** (AcePadi) | `REAL EXPERIENCE` | [`04-ai-ops-qa/eval-framework/`](./04-ai-ops-qa/eval-framework/) |
+| **8** | Automated Quality Checks | **Multi-Provider Benchmark** (Mindframe) | `REAL EXPERIENCE` | [`04-ai-ops-qa/model-benchmark/`](./04-ai-ops-qa/model-benchmark/) |
+| **9** | Field Work | **Real-World Placement / Case Study** | `OPEN` | [`05-real-world/`](./05-real-world/) |
 
 ---
 

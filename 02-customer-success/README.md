@@ -6,7 +6,7 @@
 
 **Proof ID:** WOS-CS-004  
 **Capability:** Customer Onboarding, Cohort Operations, QBR & Health Scoring, Churn / Dropout Mitigation  
-**Job Door:** Customer Success & Operations  
+**Operational Stage:** User Onboarding & Support  
 **Proof Class:** REAL EXPERIENCE  
 
 ---

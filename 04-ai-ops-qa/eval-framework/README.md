@@ -2,7 +2,7 @@
 
 **Proof Class:** REAL EXPERIENCE  
 **Capability:** LLM Output Evaluation, Rubric Design, Algorithmic Quality Gates, Error Taxonomy  
-**Job Door:** AI Operations & Output QA  
+**Operational Stage:** Automated Quality Checks  
 **Proof ID:** WOS-AI-007  
 
 ---

@@ -2,7 +2,7 @@
 
 **Proof Class:** SELF-DIRECTED  
 **Capability:** Technical Documentation, Knowledge Base Architecture, Tier-1 Ticket Deflection, Cross-Service Troubleshooting  
-**Job Door:** Documentation & Knowledge Operations  
+**Operational Stage:** Clear Guides & Runbooks  
 **Proof ID:** WOS-DOC-005  
 
 ---
