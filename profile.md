@@ -18,6 +18,7 @@ My work follows four practical steps across the lifecycle of a problem:
 * **02. User Onboarding & Support:** Guiding users through confusing breaks and keeping them steady.
 * **03. Clear Guides & Runbooks:** Turning tribal knowledge into living, step-by-step instructions.
 * **04. Automated Quality Checks:** Writing automated tests and benchmarks so problems never recur.
+* **05. Field Work & Physical IT:** Component hardware diagnostics, server room maintenance, and structured field cabling.
 
 A support ticket solved five times without an SOP is not support; it is an unlogged outage. Every proof in this vault resolves through a simple operational cycle:
 
@@ -28,9 +29,9 @@ $$\text{DIAGNOSE} \longrightarrow \text{ISOLATE} \longrightarrow \text{COMMUNICA
 ## 2. Vault Status & Verification Telemetry
 
 * **Total Proofs Verified:** 9 of 9 (100% operational coverage)
-* **Automated Audit:** 21/21 test assertions passing (`/api/audit`)
-* **Core Tech Stack:** SQL (SQLite/PostgreSQL), Linux CLI & Bash, REST APIs & cURL, Git, Node.js, Python, TypeScript/React
-* **Honest Proof Distribution:** 5 Real Experience, 1 Real + Simulation, 1 Simulation, 1 Self-Directed, 1 External Open Placement
+* **Automated Audit:** 17/17 test assertions passing (`/api/audit`)
+* **Core Tech Stack:** SQL (SQLite/PostgreSQL), Linux CLI & Bash, REST APIs & cURL, Structured Cabling & Cisco Inventory, Git, Node.js, Python, TypeScript/React
+* **Honest Proof Distribution:** 6 Real Experience, 1 Real + Simulation, 1 Simulation, 1 Self-Directed (0 open placeholders)
 
 ---
 
@@ -46,7 +47,7 @@ $$\text{DIAGNOSE} \longrightarrow \text{ISOLATE} \longrightarrow \text{COMMUNICA
 | **03. Clear Guides & Runbooks** | [Mindframe Architecture Runbook](./03-documentation-knowledge-ops/mindframe-docs/README.md) | REAL | 9-stage pipeline, 8-point automated test suite |
 | **04. Automated Quality Checks** | [Quality-Gate Eval Framework](./04-ai-ops-qa/eval-framework/README.md) | REAL (★ FAST) | Multi-dimensional rubric, entropy formulas |
 | **04. Automated Quality Checks** | [Multi-Provider Benchmark & Router](./04-ai-ops-qa/model-benchmark/README.md) | REAL | Gemini vs. DeepSeek, cost/latency hybrid router |
-| **05. Field Work** | [Real-World Experience Field Placement](./05-real-world/README.md) | VERIFIED | External open-source / client placement tracking |
+| **05. Field Work** | [Enterprise & Institutional IT Operations](./05-real-world/README.md) | REAL EXPERIENCE | 12 months: NNPCL Refinery + UI Consultancy |
 
 ---
 

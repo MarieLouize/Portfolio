@@ -167,14 +167,14 @@ const DOCS_CATALOG = [
   {
     id: 'PROOF-09',
     proofId: 'WOS-EXT-009',
-    title: 'Part 5: Real-World Field Work',
+    title: 'Part 5: Enterprise & Institutional IT Operations (NNPCL + UI)',
     door: 'Field Work',
     doorId: '05-real-world',
     doorNumber: 5,
-    proofClass: 'OPEN',
+    proofClass: 'REAL EXPERIENCE',
     fastTrack: false,
     path: '05-real-world/README.md',
-    summary: 'Honest pipeline tracker for external client/open-source contract and conversion template.'
+    summary: '12 months cumulative on-site IT operations: NNPCL refinery (hardware, Cat6 cabling, Cisco inventory, fuel logs) and University of Ibadan Consultancy.'
   },
 ];
 

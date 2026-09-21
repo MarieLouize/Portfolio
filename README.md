@@ -34,7 +34,7 @@ Every proof in this repository carries an honest proof-class badge:
 | **6** | Clear Guides & Runbooks | **Mindframe Technical Documentation** | `REAL EXPERIENCE` | [`03-documentation-knowledge-ops/mindframe-docs/`](./03-documentation-knowledge-ops/mindframe-docs/) |
 | **7** | Automated Quality Checks | **Quality-Gate Evaluation Framework** (AcePadi) | `REAL EXPERIENCE` | [`04-ai-ops-qa/eval-framework/`](./04-ai-ops-qa/eval-framework/) |
 | **8** | Automated Quality Checks | **Multi-Provider Benchmark** (Mindframe) | `REAL EXPERIENCE` | [`04-ai-ops-qa/model-benchmark/`](./04-ai-ops-qa/model-benchmark/) |
-| **9** | Field Work | **Real-World Placement / Case Study** | `OPEN` | [`05-real-world/`](./05-real-world/) |
+| **9** | Field Work | **Enterprise & Institutional IT Operations** (NNPCL + UI) | `REAL EXPERIENCE` | [`05-real-world/`](./05-real-world/) |
 
 ---
 

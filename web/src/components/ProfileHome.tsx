@@ -73,6 +73,8 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
               <span className="skill-chip highlight">SQL (Postgres &middot; SQLite)</span>
               <span className="skill-chip highlight">Linux CLI &amp; Bash</span>
               <span className="skill-chip highlight">REST APIs &amp; cURL</span>
+              <span className="skill-chip">Hardware &amp; Cat6 Cabling</span>
+              <span className="skill-chip">Cisco Network Inventory</span>
               <span className="skill-chip">Python</span>
               <span className="skill-chip">Node.js &amp; TypeScript</span>
               <span className="skill-chip">Git &amp; GitHub</span>
@@ -284,10 +286,10 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
             onClick={() => onSelectDoc('05-real-world/README.md')}
           >
             <GlobeIcon className="door-icon" color="var(--ink-soft)" />
-            <span className="name">Real-World Experience Field Placement</span>
+            <span className="name">Enterprise &amp; Institutional IT Operations (NNPCL + UI)</span>
             <div className="data-row-tags">
               <span className="door">FIELD WORK</span>
-              <span className="class-tag real">Verified</span>
+              <span className="class-tag real">Real</span>
             </div>
           </div>
         </div>
