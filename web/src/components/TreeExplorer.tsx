@@ -130,24 +130,6 @@ export const TreeExplorer: React.FC<TreeExplorerProps> = ({
           ticket-template.md
         </div>
         <div 
-          className={`tree-file ${isPathActive('VOICE_AND_LEXICAL_STANDARD.md') ? 'active' : ''}`}
-          onClick={() => handleSelect('VOICE_AND_LEXICAL_STANDARD.md')}
-        >
-          voice-standard.md
-        </div>
-        <div 
-          className={`tree-file ${isPathActive('OPERATIONAL_PSYCHOLOGY_PLAYBOOK.md') ? 'active' : ''}`}
-          onClick={() => handleSelect('OPERATIONAL_PSYCHOLOGY_PLAYBOOK.md')}
-        >
-          playbook.md
-        </div>
-        <div 
-          className={`tree-file ${isPathActive('MARKET_SKILL_MATRIX.md') ? 'active' : ''}`}
-          onClick={() => handleSelect('MARKET_SKILL_MATRIX.md')}
-        >
-          market-matrix.md
-        </div>
-        <div 
           className={`tree-file ${isPathActive('README.md') ? 'active' : ''}`}
           onClick={() => handleSelect('README.md')}
         >

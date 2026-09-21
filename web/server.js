@@ -4,7 +4,7 @@ const path = require('path');
 const url = require('url');
 
 const PORT = process.env.PORT || 3333;
-const REPO_ROOT = __dirname;
+const REPO_ROOT = path.resolve(__dirname, '..');
 
 // The canonical documents catalog
 const DOCS_CATALOG = [
@@ -43,42 +43,6 @@ const DOCS_CATALOG = [
     fastTrack: false,
     path: 'ticket-template.md',
     summary: 'Shared ticket standard template enforcing Claim -> Artifact -> Process -> Result -> Reflection.'
-  },
-  {
-    id: 'VOICE-STANDARD',
-    proofId: 'STD-VOICE',
-    title: 'Voice & Lexical Architecture Standard',
-    door: 'Standards & Protocols',
-    doorId: '00-standards',
-    doorNumber: 0,
-    proofClass: 'PROTOCOL',
-    fastTrack: false,
-    path: 'VOICE_AND_LEXICAL_STANDARD.md',
-    summary: 'The Resolute Systems Craftsman voice standard: 5 axioms, muscular verb filter, and operational epigrams.'
-  },
-  {
-    id: 'OPERATIONAL-PLAYBOOK',
-    proofId: 'STD-PSYCH',
-    title: 'Operational Psychology & Tactical Playbook',
-    door: 'Standards & Protocols',
-    doorId: '00-standards',
-    doorNumber: 0,
-    proofClass: 'PROTOCOL',
-    fastTrack: false,
-    path: 'OPERATIONAL_PSYCHOLOGY_PLAYBOOK.md',
-    summary: 'Marie\'s first-person operating manual: behavioral systemics, cognitive decoupling, and tactile demystification.'
-  },
-  {
-    id: 'MARKET-MATRIX',
-    proofId: 'MKT-001',
-    title: 'Market Demand & Proof Matrix (N=1,192)',
-    door: 'Standards & Protocols',
-    doorId: '00-standards',
-    doorNumber: 0,
-    proofClass: 'FOUNDATION',
-    fastTrack: false,
-    path: 'MARKET_SKILL_MATRIX.md',
-    summary: 'Empirical analysis of 1,192 opportunities across 4 doors: demanded proofs, platforms, and core competencies.'
   },
   {
     id: 'DOOR-01',
@@ -375,24 +339,22 @@ const server = http.createServer((req, res) => {
 
   // Serve Single-Page Auditing UI
   if (pathname === '/' || pathname === '/index.html') {
-    const distHtmlPath = path.join(REPO_ROOT, 'dist', 'index.html');
-    const viewerHtmlPath = path.join(REPO_ROOT, 'viewer', 'index.html');
-    const targetHtml = fs.existsSync(distHtmlPath) ? distHtmlPath : viewerHtmlPath;
-    if (fs.existsSync(targetHtml)) {
+    const distHtmlPath = path.join(__dirname, 'dist', 'index.html');
+    if (fs.existsSync(distHtmlPath)) {
       res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-      fs.createReadStream(targetHtml).pipe(res);
+      fs.createReadStream(distHtmlPath).pipe(res);
       return;
     }
   }
 
-  // Serve static assets from dist/ or viewer/ or assets/
-  if (pathname.startsWith('/assets/') || pathname.startsWith('/viewer/') || pathname.includes('.')) {
-    let filePath = path.join(REPO_ROOT, 'dist', pathname);
+  // Serve static assets from dist/ or public/ or REPO_ROOT
+  if (pathname.startsWith('/assets/') || pathname.includes('.')) {
+    let filePath = path.join(__dirname, 'dist', pathname);
     if (!fs.existsSync(filePath)) {
-      filePath = path.join(REPO_ROOT, pathname);
+      filePath = path.join(__dirname, 'public', pathname);
     }
     if (!fs.existsSync(filePath)) {
-      filePath = path.join(REPO_ROOT, 'viewer', pathname);
+      filePath = path.join(REPO_ROOT, pathname);
     }
 
     if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
