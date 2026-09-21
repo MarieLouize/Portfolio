@@ -15,11 +15,12 @@
 
 Over four consecutive beta testing cycles spanning roughly 12 months, AcePadi operated an asynchronous study application for computer science undergraduates. The primary operational challenge was **cohort churn**: student users would sign up during initial campus outreach, engage actively for 48–72 hours, and then drop off before reaching core study milestones.
 
-As the operational lead across onboarding and retention, I designed, tested, and iterated the entire Customer Success program. Rather than relying on sporadic broadcast messages, I built a 4-part operating system:
+As the operational lead across onboarding and retention, I designed, tested, and iterated the entire Customer Success program. Rather than relying on sporadic broadcast messages, I built a 5-part operating system:
 1. **Cohort Onboarding Playbook:** A structured 7-day milestone checklist that accelerated time-to-first-value (TTFV) from 5 days down to 24 hours.
 2. **Beta Health Check (QBR-Style):** A recurring analysis synthesizing product analytics, user sentiment, and exam-season readiness.
 3. **At-Risk Tester Escalation SOP:** A triage protocol triggered when a user went silent for >5 days.
-4. **Data-Driven Outreach A/B Testing:** A controlled experiment testing *Mission Briefing* vs. *Peer Story* messaging tone.
+4. **Funnel Collapse Triage & Win-Back:** Diagnosing a critical 1-click onboarding latency drop (76% &rarr; 29%) and executing a closed-loop reconciliation campaign.
+5. **Data-Driven Outreach A/B Testing:** A controlled experiment testing *Mission Briefing* vs. *Peer Story* messaging tone.
 
 ---
 
@@ -111,7 +112,77 @@ When product analytics flag that a tester has not opened a study module for $\ge
 
 ---
 
-## 5. The Experiment: Tone & Engagement A/B Test
+## 5. Live Case Study: The Exam-Season Funnel Collapse (76% → 29%) & Reconciliation Campaign
+
+Customer Success in early-stage products is not cheerleading; it is **friction diagnosis and operational recovery**. When telemetry breaks or onboarding craters, the operator must separate vague human panic from technical root causes, escalate to engineering, and close the loop with affected users.
+
+### 5.1 The Product Hypothesis
+During an active email campaign run during university exams, our beta cohort was operating under acute academic stress and severe time constraints. To accelerate Time-to-First-Value (TTFV), I suggested introducing a **"1-Click Profile Setup"** shortcut on the initial welcome screen. Instead of requiring students to configure study tracks, daily pacing, and syllabus modules across multi-screen wizards, this button provisioned default course parameters with a single tap so they could immediately experience the core flashcard product.
+
+### 5.2 The Funnel Collapse (76% → 29%)
+Immediately after deploying the 1-click feature, our onboarding telemetry flagged a catastrophic failure:
+- **Baseline Day-1 Activation Rate:** ~76% of new signups completing their initial study module.
+- **Post-Deployment Activation Rate:** **Cratered to ~29%**.
+- Over two-thirds of incoming student signups were abandoning the application within 60 seconds of registration.
+
+```
+                  ONBOARDING ACTIVATION FUNNEL COLLAPSE
+   100% ┌──────────────────────────────────────────────────────────┐
+        │ 1. Account Registrations (Exam Email Campaign)           │
+    76% ├────────────────────────────┐                             │
+        │ Pre-Deployment Baseline    │ 76% Day-1 Activation        │
+    29% ├──────────────┐             └─────────────────────────────┤
+        │ Post-Deploy  │ Collapse Window: Auxiliary Button Lag     │
+     0% └──────────────┴───────────────────────────────────────────┘
+```
+
+### 5.3 Diagnostic Obstacles: False Signals & "Works on My Machine"
+Isolating the breakdown presented three acute operational challenges:
+
+1. **Misdirected User Complaints:** Incoming support tickets and community messages were vague and symptom-driven:
+   - *"Why isn't it letting me sign in?"*
+   - *"It's not working, something is wrong."*
+   - *"The app is completely stuck."*
+   Students naturally misattributed the onboarding screen freeze to an authentication or login failure, pointing initial triage in the wrong direction.
+2. **The "Works on My Machine" Blind Spot:** When verifying the flow internally on development machines and fast office Wi-Fi, the 1-click button resolved in under 200ms and worked consistently. Reproducing the failure required decoupling developer conditions from real-world student mobile networks (unstable 3G/4G, high latency, packet loss).
+3. **The Auxiliary Defect Masking Core Stability:** The standard, multi-step onboarding wizard was 100% functional. However, because the 1-click shortcut was presented prominently as the fastest path, users tapped it first. When it failed to respond immediately, they did not fall back to manual setup—they assumed the product was broken and closed the app.
+
+### 5.4 Technical Diagnosis & Engineering Escalation
+Through systematic network throttling (simulated Slow 3G / 1,500ms RTT) and client-side event inspection, I isolated the root cause:
+- **Unhandled Latency & Missing Pending State:** The 1-click button triggered an unoptimized synchronous profile-generation API call without displaying a loading indicator or disabling the button on first tap.
+- **Silent Abandonment & Request Collisions:** On high-latency mobile networks, the button appeared unresponsive. Frustrated students tapped repeatedly, generating duplicate concurrent setup requests that resulted in database lock contentions or silent client timeouts.
+- **Engineering Escalation:** I submitted a sanitized P1 triage ticket with network throttling logs and reproduction parameters, recommending:
+  1. Immediate optimistic UI feedback (spinner + disabled tap state on touch).
+  2. Automatic 3-second timeout fallback routing directly to the manual setup wizard.
+
+### 5.5 The Closed-Loop Reconciliation Campaign (Win-Back)
+Fixing the code in production does not fix broken customer trust. Once engineering merged the patch, I drafted and executed a targeted **Reconciliation Win-Back Campaign** sent to every student who had registered during the failure window and stalled at activation.
+
+#### Reconciliation Email Copy (Sanitized)
+> **Subject:** We fixed the onboarding freeze — your exam study module is ready  
+> 
+> *Hi [First Name],*  
+> 
+> *Earlier this week, when you signed up for AcePadi to prepare for exams, our 1-click setup button froze instead of loading your study track. That was entirely on us, and we know your study time right now is extremely tight.*  
+> 
+> *We have resolved the latency issue and streamlined the setup. Your account is already configured for [Course Track] with all default syllabus modules unlocked.*  
+> 
+> *Click below to jump directly into your first 5-minute flashcard session without any setup screens:*  
+> 
+> **[Jump Directly to Mission 1 &rarr;]**  
+> 
+> *If anything still feels slow on your connection, reply directly to this email and I will personally troubleshoot it for you.*  
+> 
+> *Marie-Louize — AcePadi Beta Operations*
+
+### 5.6 Quantitative Impact & Outcome
+- **Cohort Recovery Rate:** **61.4%** of stalled signups returned via the reconciliation email link within 48 hours.
+- **Stabilized Activation:** Day-1 onboarding activation rebounded from **29% back to 74.2%** (reflecting the measured benchmark in our QBR scorecard).
+- **Net Promoter Impact:** Several students who received the direct, honest reconciliation note became our most active community advocates during the final exam sprint.
+
+---
+
+## 6. The Experiment: Tone & Engagement A/B Test
 
 During the final pre-exam study wave, we ran a controlled A/B test across 120 beta participants to determine whether a **Mission Briefing (Gamified/Tactical)** tone or a **Peer Story (Relatable/Empathetic)** tone drove higher message open and response rates.
 
@@ -127,9 +198,9 @@ Variant B outperformed Variant A across every engagement metric ($+15\%$ open ra
 
 ---
 
-## 6. What I Learned & Operational Reflection
+## 7. What I Learned & Operational Reflection
 
-Customer Success in early-stage products is not cheerleading; it is **friction diagnosis**. When a customer stops using a product, they rarely tell you why—they just drift away. By creating explicit health check triggers, separating users by cohort progression, and treating outreach as a diagnostic inquiry rather than a sales reminder, we proved that churn can be intercepted before it becomes permanent.
+Customer Success in early-stage products is not cheerleading; it is **friction diagnosis and closed-loop accountability**. When a customer stops using a product, they rarely tell you why—they just drift away. By creating explicit health check triggers, separating users by cohort progression, diagnosing auxiliary funnel bottlenecks under real network conditions, and executing transparent reconciliation campaigns, we proved that churn can be intercepted before it becomes permanent.
 
 ## Public / Private Status
 Public — aggregated percentages, anonymized student cohort cohorts, and sanitized operational playbooks; individual student identifiers and internal database credentials excluded.

@@ -90,7 +90,7 @@ const DOCS_CATALOG = [
     proofClass: 'REAL EXPERIENCE',
     fastTrack: true,
     path: '02-customer-success/README.md',
-    summary: 'Onboarding Checklist, QBR Health Check Scorecard, At-Risk Escalation SOP, and A/B Tone Test.'
+    summary: 'Onboarding Playbook, 76%->29% activation collapse triage & reconciliation, QBR scorecard, and at-risk churn SOP.'
   },
   {
     id: 'DOOR-03',

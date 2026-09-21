@@ -42,7 +42,7 @@ $$\text{DIAGNOSE} \longrightarrow \text{ISOLATE} \longrightarrow \text{COMMUNICA
 | **01. Troubleshooting & Fixes** | [Queue & Escalation Matrix](./01-support-technical-ops/queue/README.md) | REAL + SIM | 6 tickets, macro library, P1–P4 escalation |
 | **01. Troubleshooting & Fixes** | [Edge-Cache Pipeline Diagnosis](./01-support-technical-ops/pipeline-diagnosis/README.md) | REAL (★ FAST) | 45s TTL cache bug, cURL repro, upstream PR |
 | **01. Troubleshooting & Fixes** | [Webhook Incident Postmortem](./01-support-technical-ops/incident-investigation/README.md) | SIMULATION | Blameless 5-whys, payload validation, SOP |
-| **02. User Onboarding & Support** | [At-Risk CS Onboarding Playbook](./02-customer-success/README.md) | REAL | Micro-commitment ladder, churn defense |
+| **02. User Onboarding & Support** | [Beta User Onboarding & CS Program](./02-customer-success/README.md) | REAL | 76%→29% funnel recovery, reconciliation campaign, churn SOP |
 | **03. Clear Guides & Runbooks** | [Store Customizer 5-Layer Guide](./03-documentation-knowledge-ops/customize-store-kb/README.md) | SELF-DIRECTED | 5-layer deflection, self-serve runbook |
 | **03. Clear Guides & Runbooks** | [Mindframe Architecture Runbook](./03-documentation-knowledge-ops/mindframe-docs/README.md) | REAL | 9-stage pipeline, 8-point automated test suite |
 | **04. Automated Quality Checks** | [Quality-Gate Eval Framework](./04-ai-ops-qa/eval-framework/README.md) | REAL (★ FAST) | Multi-dimensional rubric, entropy formulas |
