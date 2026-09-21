@@ -45,9 +45,9 @@ $$\text{DIAGNOSE} \longrightarrow \text{ISOLATE} \longrightarrow \text{COMMUNICA
 | **02. User Onboarding & Support** | [Beta User Onboarding & CS Program](./02-customer-success/README.md) | REAL | 76%→29% funnel recovery, reconciliation campaign, churn SOP |
 | **03. Clear Guides & Runbooks** | [Store Customizer 5-Layer Guide](./03-documentation-knowledge-ops/customize-store-kb/README.md) | SELF-DIRECTED | 5-layer deflection, self-serve runbook |
 | **03. Clear Guides & Runbooks** | [Mindframe Architecture Runbook](./03-documentation-knowledge-ops/mindframe-docs/README.md) | REAL | 9-stage pipeline, 8-point automated test suite |
-| **04. Automated Quality Checks** | [Quality-Gate Eval Framework](./04-ai-ops-qa/eval-framework/README.md) | REAL (★ FAST) | Multi-dimensional rubric, entropy formulas |
+| **04. Automated Quality Checks** | [Quality-Gate Eval Framework](./04-ai-ops-qa/eval-framework/README.md) | REAL | Multi-dimensional rubric, entropy formulas |
 | **04. Automated Quality Checks** | [Multi-Provider Benchmark & Router](./04-ai-ops-qa/model-benchmark/README.md) | REAL | Gemini vs. DeepSeek, cost/latency hybrid router |
-| **05. Field Work** | [Enterprise & Institutional IT Operations](./05-real-world/README.md) | REAL EXPERIENCE | 12 months: NNPCL Refinery + UI Consultancy |
+| **05. Field Work** | [Enterprise & Institutional IT Operations](./05-real-world/README.md) | REAL (★ FAST) | 12 months: NNPCL Refinery + UI Consultancy |
 
 ---
 

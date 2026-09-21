@@ -261,7 +261,7 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
             onClick={() => onSelectDoc('04-ai-ops-qa/eval-framework/README.md')}
           >
             <GaugeIcon className="door-icon" color="var(--door-aiqa)" />
-            <span className="name">AcePadi Quality-Gate Eval Framework (3-Min Fast Track)</span>
+            <span className="name">AcePadi Quality-Gate Evaluation Framework</span>
             <div className="data-row-tags">
               <span className="door">QUALITY CHECKS</span>
               <span className="class-tag real">Real</span>
@@ -286,7 +286,7 @@ export const ProfileHome: React.FC<ProfileHomeProps> = ({ onSelectDoc }) => {
             onClick={() => onSelectDoc('05-real-world/README.md')}
           >
             <GlobeIcon className="door-icon" color="var(--ink-soft)" />
-            <span className="name">Enterprise &amp; Institutional IT Operations (NNPCL + UI)</span>
+            <span className="name">Enterprise &amp; Institutional IT Operations (3-Min Fast Track)</span>
             <div className="data-row-tags">
               <span className="door">FIELD WORK</span>
               <span className="class-tag real">Real</span>

@@ -23,9 +23,9 @@ export const FastTrackBar: React.FC<FastTrackBarProps> = ({ onSelectDoc }) => {
         </button>
         <button 
           className="btn btn--sm" 
-          onClick={() => onSelectDoc('04-ai-ops-qa/eval-framework/README.md')}
+          onClick={() => onSelectDoc('05-real-world/README.md')}
         >
-          <span>Proof 7: AI Quality Gates (QA)</span>
+          <span>Proof 9: Enterprise IT Operations (Field Work)</span>
         </button>
         <button 
           className="btn btn--sm" 

@@ -148,7 +148,7 @@ const DOCS_CATALOG = [
     doorId: '04-ai-ops-qa',
     doorNumber: 4,
     proofClass: 'REAL EXPERIENCE',
-    fastTrack: true,
+    fastTrack: false,
     path: '04-ai-ops-qa/eval-framework/README.md',
     summary: 'Multi-dimensional rubric, entropy formulas, before/after samples, and error taxonomy.'
   },
@@ -172,7 +172,7 @@ const DOCS_CATALOG = [
     doorId: '05-real-world',
     doorNumber: 5,
     proofClass: 'REAL EXPERIENCE',
-    fastTrack: false,
+    fastTrack: true,
     path: '05-real-world/README.md',
     summary: '12 months cumulative on-site IT operations: NNPCL refinery (hardware, Cat6 cabling, Cisco inventory, fuel logs) and University of Ibadan Consultancy.'
   },
@@ -195,14 +195,14 @@ function runAudit() {
     });
   });
 
-  // Check 2: Fast-track links (Proof 2 and Proof 7)
+  // Check 2: Fast-track links (Proof 2 and Proof 9)
   const p2 = DOCS_CATALOG.find(d => d.id === 'PROOF-02');
-  const p7 = DOCS_CATALOG.find(d => d.id === 'PROOF-07');
+  const p9 = DOCS_CATALOG.find(d => d.id === 'PROOF-09');
   results.push({
     category: 'Fast Track',
     name: '3-Minute Fast-Track Flagship Proofs',
-    status: (p2 && p2.fastTrack && p7 && p7.fastTrack) ? 'PASS' : 'FAIL',
-    detail: 'Proof 2 (Pipeline Fix) & Proof 7 (Quality-Gate Eval) flagged for 3-minute review.'
+    status: (p2 && p2.fastTrack && p9 && p9.fastTrack) ? 'PASS' : 'FAIL',
+    detail: 'Proof 2 (Pipeline Fix) & Proof 9 (Enterprise IT Operations) flagged for 3-minute review.'
   });
 
   // Check 3: Proof Class integrity

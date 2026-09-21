@@ -12,8 +12,8 @@ If you are a hiring manager or engineering lead evaluating technical operating d
 1. **[Pipeline Root-Cause Fix (Diagnose)](./01-support-technical-ops/pipeline-diagnosis/)** — *Real Experience*  
    How a user complaint about repetitive study sessions escalated into an upstream content-pipeline investigation, introducing session state ledgers (Concept Ledger, Recent Block Log, Phrase Ledger) that eliminated duplicate block sequences.
 
-2. **[AcePadi Beta Customer Success Program (Operate)](./02-customer-success/)** — *Real Experience*  
-   Complete customer success operating framework from a year of real beta cohorts: onboarding checklists, QBR-style health checks, an at-risk user intervention protocol, and retention metrics.
+2. **[Enterprise & Institutional IT Operations (Field Work)](./05-real-world/)** — *Real Experience*  
+   12 cumulative months of on-site enterprise operations across NNPCL Oil Refinery and University of Ibadan Consultancy Service: Cat6 field cabling, component hardware diagnostics, Cisco device inventory, and telemetry cross-audits.
 
 ---
 

@@ -102,7 +102,6 @@ export const TreeExplorer: React.FC<TreeExplorerProps> = ({
             onClick={() => handleSelect('04-ai-ops-qa/eval-framework/README.md')}
           >
             <span>eval-framework.md</span>
-            <span style={{ color: 'var(--sage-leaf)', fontWeight: 'bold', fontSize: '13px' }}>★</span>
           </div>
           <div 
             className={`tree-child ${isPathActive('04-ai-ops-qa/model-benchmark/README.md') ? 'active' : ''}`}
@@ -118,6 +117,7 @@ export const TreeExplorer: React.FC<TreeExplorerProps> = ({
           onClick={() => handleSelect('05-real-world/README.md')}
         >
           <span className="mini-folder"></span>05-field-work/ <span className="lock-tag">verified</span>
+          <span style={{ color: 'var(--rosewood)', fontWeight: 'bold', fontSize: '13px', marginLeft: '6px' }}>★</span>
         </div>
 
         <div className="tree-divider"></div>
