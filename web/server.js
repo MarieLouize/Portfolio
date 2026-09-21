@@ -33,18 +33,6 @@ const DOCS_CATALOG = [
     summary: 'Candidate bio, 3-minute hiring fast track, 4-door 9-proof matrix, and systems philosophy.'
   },
   {
-    id: 'TICKET-TEMPLATE',
-    proofId: 'STD-000',
-    title: 'Unified Ticket Standard Template',
-    door: 'Standards & Protocols',
-    doorId: '00-standards',
-    doorNumber: 0,
-    proofClass: 'PROTOCOL',
-    fastTrack: false,
-    path: 'ticket-template.md',
-    summary: 'Shared ticket standard template enforcing Claim -> Artifact -> Process -> Result -> Reflection.'
-  },
-  {
     id: 'DOOR-01',
     proofId: 'DOOR-01-INDEX',
     title: 'Part 1: Troubleshooting & Fixes',

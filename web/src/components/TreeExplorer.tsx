@@ -124,12 +124,6 @@ export const TreeExplorer: React.FC<TreeExplorerProps> = ({
 
         {/* Standards & Protocols */}
         <div 
-          className={`tree-file ${isPathActive('ticket-template.md') ? 'active' : ''}`}
-          onClick={() => handleSelect('ticket-template.md')}
-        >
-          ticket-template.md
-        </div>
-        <div 
           className={`tree-file ${isPathActive('README.md') ? 'active' : ''}`}
           onClick={() => handleSelect('README.md')}
         >

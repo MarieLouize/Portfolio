@@ -10,4 +10,4 @@ Three proofs covering the full DIAGNOSE → ORGANIZE → COMMUNICATE → DOCUMEN
 
 **Start here if you're short on time:** [`pipeline-diagnosis/`](./pipeline-diagnosis/) — it is the most complete real-experience writeup and the clearest demonstration of the DIAGNOSE step end-to-end.
 
-See the root [`ticket-template.md`](../ticket-template.md) for the format every ticket in `queue/` follows.
+Every ticket in `queue/` follows the unified ticket standard (Summary, Symptoms, Steps Taken, Resolution, Root Cause, Preventive Notes).

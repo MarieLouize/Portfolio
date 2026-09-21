@@ -3,7 +3,7 @@
 **Proof Class:** REAL EXPERIENCE (AcePadi tickets, below) + SIMULATION (Trovéa tickets, below)  
 **Standing in for (Trovéa half):** live Trovéa merchant support tickets. Converts to real once Trovéa is in beta with active stores.
 
-This queue is split deliberately rather than blended: the AcePadi tickets are drawn from roughly a year of real beta-cycle support, while the Trovéa tickets are staged from the storefront spec because Trovéa has no live users yet. Both halves use the same [ticket template](../../ticket-template.md) so the operating pattern reads as one continuous discipline, not two different exercises.
+This queue is split deliberately rather than blended: the AcePadi tickets are drawn from roughly a year of real beta-cycle support, while the Trovéa tickets are staged from the storefront spec because Trovéa has no live users yet. Both halves use the same unified ticket template structure so the operating pattern reads as one continuous discipline, not two different exercises.
 
 ---
 

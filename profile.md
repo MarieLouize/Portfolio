@@ -4,7 +4,7 @@
 > **Core Philosophy:** *"I make messy digital operations clearer and more repeatable."*  
 > **Status:** Active Candidate Profile & Evidence Vault  
 > **Target Alignment:** Support Engineering, Technical Operations, Customer Success, AI Output QA  
-> **Operational Standard:** [Unified Ticket Standard](./ticket-template.md)
+> **Operational Standard:** Deterministic Ticket Protocol (Claim &rarr; Artifact &rarr; Process &rarr; Result &rarr; Reflection)
 
 ---
 

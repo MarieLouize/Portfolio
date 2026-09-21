@@ -40,9 +40,8 @@ Every proof in this repository carries an honest proof-class badge:
 
 ## Operating Standard
 
-All technical investigations and customer tickets follow the unified standard defined in [`ticket-template.md`](./ticket-template.md):
+All technical investigations and customer tickets follow the unified standard:
 $$\text{CLAIM} \longrightarrow \text{ARTIFACT} \longrightarrow \text{PROCESS} \longrightarrow \text{RESULT} \longrightarrow \text{REFLECTION}$$
 
 ---
 
-*“She understands the system behind the task.”*
