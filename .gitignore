@@ -3,3 +3,6 @@ node_modules
 *.log
 context/
 ticket-template.md
+temp.md
+application-*.md
+.vercel

@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "description": "Technical Operations & Systems Evidence Vault",
+  "workspaces": [
+    "web"
+  ],
   "scripts": {
+    "build": "node scripts/generate-docs-bundle.js && npm --prefix web run build",
     "dev": "npm --prefix web run dev",
-    "build": "npm --prefix web run build",
     "start": "npm --prefix web run start",
     "serve": "npm --prefix web run serve",
     "audit": "npm --prefix web run audit"
